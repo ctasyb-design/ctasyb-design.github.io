@@ -568,7 +568,8 @@ const VIEWS = {
         <div class="panel"><h3 style="margin:0 0 14px;color:var(--indigo)">사무소 정보</h3>
           <dl class="info num"><dt>사무소명</dt><dd>${esc(o.name)}</dd><dt>대표</dt><dd>${esc(o.ceo)}</dd>
           <dt>주소</dt><dd>${esc(o.address)}</dd><dt>전화</dt><dd>${esc(o.phone)}</dd>${o.mobile?`<dt>휴대전화</dt><dd>${esc(o.mobile)}</dd>`:""}<dt>팩스</dt><dd>${esc(o.fax)}</dd>
-          <dt>이메일</dt><dd>${esc(o.email)}</dd><dt>상담시간</dt><dd>${esc(o.hours)}</dd></dl></div>
+          <dt>이메일</dt><dd>${esc(o.email)}</dd><dt>상담시간</dt><dd>${esc(o.hours)}</dd></dl>
+          ${o.cardUrl?`<div class="btns" style="margin-top:16px"><a class="btn outline" href="${esc(o.cardUrl)}" target="_blank" rel="noopener">디지털 명함 보기</a>${o.vcfUrl?`<a class="btn outline" href="${esc(o.vcfUrl)}" target="_blank" rel="noopener">연락처 저장</a>`:""}</div>`:""}</div>
       </div>
       ${ctaBox()}</div></section>`;
   },
@@ -646,7 +647,7 @@ const VIEWS = {
         <div><div class="panel"><h3 style="margin:0 0 14px;color:var(--indigo)">연락처</h3>
           <dl class="info num"><dt>전화</dt><dd><b>${esc(o.phone)}</b></dd>${o.mobile?`<dt>휴대전화</dt><dd><b>${esc(o.mobile)}</b></dd>`:""}<dt>팩스</dt><dd>${esc(o.fax)}</dd><dt>이메일</dt><dd>${esc(o.email)}</dd>${o.naverBlog?`<dt>블로그</dt><dd><a href="${esc(o.naverBlog)}" target="_blank" rel="noopener">blog.naver.com/ctasyb</a></dd>`:""}${o.kakao?`<dt>카카오톡</dt><dd>${esc(o.kakao)}</dd>`:""}
           <dt>주소</dt><dd>${esc(o.address)}</dd><dt>상담시간</dt><dd>${esc(o.hours)}</dd></dl>
-          <div class="btns" style="margin-top:16px">${kakaoBtn()}</div></div>
+          <div class="btns" style="margin-top:16px">${kakaoBtn()}${o.vcfUrl?`<a class="btn outline" href="${esc(o.vcfUrl)}" target="_blank" rel="noopener">연락처 저장</a>`:""}${o.cardUrl?`<a class="btn outline" href="${esc(o.cardUrl)}" target="_blank" rel="noopener">디지털 명함</a>`:""}</div></div>
           <div class="panel" style="margin-top:20px"><h3 style="margin:0 0 10px;color:var(--indigo)">상담 시 준비 자료</h3>
           <ul style="padding-left:18px;font-size:15px;margin:0"><li>최근 신고서(종합소득세·법인세·부가세)</li><li>부동산 등기부등본·매매계약서</li><li>재무제표 및 계정별 원장</li><li>세무서 안내문·고지서(해당 시)</li></ul></div>
         </div>
@@ -738,7 +739,7 @@ function renderFooter(){
   const o = S.office;
   $("#footer").innerHTML = `<div style="display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap">
     <div class="num"><div class="brandf"><img src="${LOGO_LIGHT}" alt=""><b style="font-size:17px">${esc(o.name)}</b></div>${esc(o.ceo)}<br>${esc(o.address)}<br>전화 ${esc(o.phone)}${o.mobile?` · 휴대전화 ${esc(o.mobile)}`:""} · 팩스 ${esc(o.fax)} · ${esc(o.email)}<br>${esc(o.hours)}</div>
-    <div class="num">세법 개정 소식 최종 확인: <b>${fmt(S.laws.updated)}</b><br>블로그 최신 글: ${fmt(S.posts.items[0].date)}${o.naverBlog?`<br>네이버 블로그: <a href="${esc(o.naverBlog)}" target="_blank" rel="noopener" style="color:#e6cd93">blog.naver.com/ctasyb</a>`:""}</div></div>
+    <div class="num">세법 개정 소식 최종 확인: <b>${fmt(S.laws.updated)}</b><br>블로그 최신 글: ${fmt(S.posts.items[0].date)}${o.naverBlog?`<br>네이버 블로그: <a href="${esc(o.naverBlog)}" target="_blank" rel="noopener" style="color:#e6cd93">blog.naver.com/ctasyb</a>`:""}${o.cardUrl?`<br>디지털 명함: <a href="${esc(o.cardUrl)}" target="_blank" rel="noopener" style="color:#e6cd93">명함 보기</a>${o.vcfUrl?` · <a href="${esc(o.vcfUrl)}" target="_blank" rel="noopener" style="color:#e6cd93">연락처 저장</a>`:""}`:""}</div></div>
     <div class="disc">본 홈페이지의 세법 정보는 일반적인 안내를 위한 것으로, 개별 사안에 대한 세무 자문을 대신하지 않습니다. ‘정부안’·‘국회심사’ 단계의 내용은 입법 과정에서 변경될 수 있으며, 실제 적용 전 반드시 세무사와 상담하시기 바랍니다.</div>`;
 }
 

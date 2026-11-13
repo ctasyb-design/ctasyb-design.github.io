@@ -28,7 +28,7 @@ def page(title, desc, path, body):
 <meta property="og:type" content="article"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(desc)}"><meta property="og:url" content="{url}">
 {fonts}<link rel="stylesheet" href="/assets-style.css"></head><body>
 <header class="top"><div class="wrap"><a class="brand" href="/"><img class="logo" src="/logo.png" alt="{e(office['name'])} 로고"><span><b>{e(office['name'])}</b><small>부산·경남 세무·회계</small></span></a>
-<nav class="main" style="display:flex"><a href="/">홈</a><a href="/#guide">세목별 안내</a><a href="/blog/">세무 블로그</a><a href="/#contact" class="call">상담 신청</a></nav></div></header>
+<nav class="main" style="display:flex"><a href="/">홈</a><a href="/#guide">세목별 안내</a><a href="/blog/">세무 블로그</a><a href="https://blog.naver.com/ctasyb" target="_blank" rel="noopener">네이버 블로그</a><a href="/#contact" class="call">상담 신청</a></nav></div></header>
 <main><section class="block"><div class="wrap"><div class="post-wrap">{body}
 <div class="cta"><div class="in"><h3>상담 문의</h3><p>{e(office['hours'])}</p><div class="lines num"><span>전화 <b>{e(office['phone'])}</b></span><span>휴대전화 <b>{e(office.get('mobile',''))}</b></span><span>{e(office['email'])}</span></div><div class="btns"><a class="btn foil" href="/#contact">상담 신청</a></div></div></div><div class="band"><i></i><i></i></div>
 </div></div></section></main>

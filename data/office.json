@@ -1,19 +1,37 @@
 {
-  "name": "신영범세무회계사무소",
-  "nameEn": "SHIN YOUNGBUM TAX & ACCOUNTING",
-  "ceo": "대표세무사 신영범",
-  "region": "부산·경남",
-  "address": "부산광역시 북구 낙동대로 1570번길 5 (3층)",
-  "phone": "051-312-3514",
-  "mobile": "010-6556-3514",
-  "fax": "0504-848-3515",
-  "email": "ctasyb@naver.com",
-  "kakao": "",
-  "hours": "평일 09:00–17:00 (점심시간 제외) · 주말·공휴일 예약 상담",
-  "tagline": "숫자로 설명하고, 근거로 설득하는 세무 파트너",
-  "intro": "신영범세무회계사무소는 부산 북구에 자리한 세무 전문 사무소로, 부산·경남 지역 개인사업자·법인·자산가의 세무를 맡고 있습니다. 기장·신고 대행부터 법인세·부가가치세·종합소득세, 양도·상속·증여 설계, 과세전적부심사 등 조세불복까지 한 곳에서 처리합니다. 모든 상담은 결론을 먼저 말씀드리고, 그 근거를 법령·예규와 숫자로 상세히 보여드리는 방식으로 진행합니다.",
-  "kakaoUrl": "",
-  "naverBlog": "https://blog.naver.com/ctasyb",
-  "cardUrl": "https://ctasyb-design.github.io/card/",
-  "vcfUrl": "https://ctasyb-design.github.io/card/shinyb.vcf"
+ "name": "신영범세무회계사무소",
+ "nameEn": "SHIN YOUNGBUM TAX & ACCOUNTING",
+ "ceo": "대표세무사 신영범",
+ "region": "부산·경남",
+ "address": "부산광역시 북구 낙동대로 1570번길 5 (3층)",
+ "phone": "051-312-3514",
+ "mobile": "010-6556-3514",
+ "fax": "0504-848-3515",
+ "email": "ctasyb@naver.com",
+ "kakao": "",
+ "hours": "평일 09:00–17:00 (점심시간 제외) · 주말·공휴일 예약 상담",
+ "tagline": "숫자로 설명하고, 근거로 설득하는 세무 파트너",
+ "intro": "신영범세무회계사무소는 부산 북구에 자리한 세무 전문 사무소로, 부산·경남 지역 개인사업자·법인·자산가의 세무를 맡고 있습니다. 기장·신고 대행부터 법인세·부가가치세·종합소득세, 양도·상속·증여 설계, 과세전적부심사 등 조세불복까지 한 곳에서 처리합니다. 모든 상담은 결론을 먼저 말씀드리고, 그 근거를 법령·예규와 숫자로 상세히 보여드리는 방식으로 진행합니다.",
+ "kakaoUrl": "",
+ "naverBlog": "https://blog.naver.com/ctasyb",
+ "cardUrl": "https://ctasyb-design.github.io/card/",
+ "vcfUrl": "https://ctasyb-design.github.io/card/shinyb.vcf",
+ "profile": {
+  "title": "대표세무사 신영범",
+  "since": "2007",
+  "rows": [
+   [
+    "개업",
+    "2007년 세무사 개업 · 현 신영범세무회계사무소 대표세무사"
+   ],
+   [
+    "학력",
+    "부산 낙동고등학교 졸업<br>부산외국어대학교 졸업"
+   ],
+   [
+    "활동",
+    "전 부산세무사고시회 국제부 상임이사<br>마을세무사<br>국세심사위원"
+   ]
+  ]
+ }
 }

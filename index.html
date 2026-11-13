@@ -205,6 +205,7 @@ a.post p{margin:0;color:var(--sub);font-size:15px;max-width:48em}
 .greet{font-size:17px;line-height:1.9;max-width:36em}
 .sign{display:flex;align-items:center;gap:12px;margin-top:20px;color:var(--indigo);font-weight:700}
 .sign img{width:44px;height:44px}
+.profile{margin-top:30px;border:1px solid var(--line);border-radius:14px;padding:20px 22px;background:#fff}.profile h3{margin:0 0 4px;color:var(--indigo)}.profile .since{margin:0 0 12px;color:var(--sub);font-size:14px}.profile dl{display:grid;grid-template-columns:64px 1fr;gap:10px 14px;margin:0;font-size:15px;line-height:1.7}.profile dt{color:var(--foil);font-weight:700}.profile dd{margin:0}
 .principles{padding:0;list-style:none;margin:0}
 .principles li{padding:12px 0;border-top:1px solid var(--line)}
 .principles b{color:var(--indigo)}
@@ -590,6 +591,7 @@ const VIEWS = {
       <div class="sec-head"><div><h2>사무소 소개</h2></div></div>
       <div class="about-grid">
         <div><p class="greet">${esc(o.intro)}</p><div class="sign"><img src="${LOGO}" alt="">${esc(o.ceo)}</div>
+          ${o.profile?`<div class="profile"><h3>대표세무사 약력</h3><p class="since">${esc(o.profile.title)} · ${esc(o.profile.since)}년 개업</p><dl>${o.profile.rows.map(r=>`<dt>${esc(r[0])}</dt><dd>${r[1].split("<br>").map(esc).join("<br>")}</dd>`).join("")}</dl></div>`:""}
           <h3 style="margin:36px 0 6px;color:var(--indigo)">일하는 원칙</h3>
           <ul class="principles"><li><b>결론 먼저</b> — 세금이 얼마인지, 무엇을 해야 하는지부터 말씀드립니다.</li>
           <li><b>근거는 상세히</b> — 법령·시행령·예규 조문과 계산 내역을 함께 제시합니다.</li>

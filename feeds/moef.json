@@ -2,8 +2,15 @@
   "ministry": "재정경제부",
   "source": "재정경제부 누리집 RSS",
   "list": "https://www.mofe.go.kr",
-  "updated": "2026-11-13",
+  "updated": "2026-11-15",
   "items": [
+    {
+      "title": "한국 주도로 9개국이 참여하는 글로벌 고신뢰 탄소시장(GVCM) 협력 기반 마련",
+      "link": "http://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000079961",
+      "date": "2026-11-15",
+      "summary": "",
+      "tax": false
+    },
     {
       "title": "권대영 1차관, 「월급방위대 TF」 킥오프 회의 개최",
       "link": "http://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000079949",
@@ -276,13 +283,6 @@
       "date": "2026-10-30",
       "summary": "",
       "tax": false
-    },
-    {
-      "title": "'26.9월 국세수입 동향",
-      "link": "http://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000079808",
-      "date": "2026-10-30",
-      "summary": "",
-      "tax": true
     }
   ]
 }

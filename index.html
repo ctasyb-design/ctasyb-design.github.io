@@ -680,6 +680,8 @@ const VIEWS = {
             <div><label for="f2">연락처</label><input id="f2" name="tel" required placeholder="010-0000-0000"></div>
             <div><label for="f3">상담 분야</label><select id="f3" name="type">${["기장·신고 대행","법인 세무","양도소득세","상속·증여세","세액공제·감면","세무조사·조세불복","연말정산·급여","기타"].map(x=>`<option>${x}</option>`).join("")}</select></div>
             <div><label for="f4">문의 내용</label><textarea id="f4" name="msg" required placeholder="예) 2018년 취득한 아파트 1채를 2027년에 매도 예정입니다. 거주기간은 3년입니다."></textarea></div>
+            <div style="position:absolute;left:-9999px" aria-hidden="true"><label for="f0">비워 두십시오</label><input id="f0" name="website" tabindex="-1" autocomplete="off"></div>
+            <p class="meta" style="margin:0;background:#f1f3f8;border-left:3px solid var(--indigo);padding:10px 12px">광고·홍보·스팸, 인터넷 주소(링크)가 들어간 글, 외국어로 작성된 글은 접수하지 않습니다. 세무 상담 내용을 한국어로 작성해 주십시오.</p>
             <button class="btn foil" type="submit">상담 내용 정리하기</button>
           </form>
           <pre class="out" id="out"></pre>
@@ -770,6 +772,12 @@ function bind(v, arg){
     $("#inq").onsubmit = e => {
       e.preventDefault();
       const f = new FormData(e.target);
+      const why = spamReason(f);
+      if(why){
+        $("#out").style.display = "none"; $("#outBtns").style.display = "none";
+        $("#toast").textContent = why;
+        return;
+      }
       const txt = `[${S.office.name} 상담 신청]\n성함/상호: ${f.get("name")}\n연락처: ${f.get("tel")}\n상담 분야: ${f.get("type")}\n문의 내용:\n${f.get("msg")}`;
       const out = $("#out"); out.textContent = txt; out.style.display = "block"; $("#outBtns").style.display = "flex";
       $("#toast").textContent = "아래 내용을 복사해 이메일 또는 문자로 보내 주십시오.";
@@ -779,6 +787,24 @@ function bind(v, arg){
       catch(_){ $("#toast").textContent = "복사가 차단되었습니다. 내용을 직접 선택해 복사해 주십시오."; }
     };
   }
+}
+
+/* 상담 신청 운영 원칙: 광고·홍보·스팸·외국어 작성 글은 받지 않음 */
+const SPAM_WORDS = ["광고 문의","광고문의","광고합니다","홍보 문의","홍보문의","홍보합니다","제휴 문의","제휴문의","마케팅 제안","마케팅 대행","상위노출","상위 노출","체험단","백링크","트래픽","카지노","바카라","토토","슬롯","먹튀","텔레그램","리딩방","수익 보장","수익보장","고수익","재택 부업","재택부업","코인 투자","무료 체험","링크 클릭"];
+function spamReason(f){
+  if(f.get("website")) return "자동 등록이 감지되어 접수하지 않았습니다.";
+  const all = [f.get("name"), f.get("tel"), f.get("msg")].join(" ").replace(/[\w.+-]+@[\w-]+(\.[\w-]+)+/g, " ");
+  if(/(https?:\/\/|www\.|\b[\w-]+\.(com|net|kr|co|io|xyz|top|shop|me|ly)\b|t\.me\/|open\.kakao)/i.test(all))
+    return "인터넷 주소(링크)가 포함된 글은 접수하지 않습니다. 주소를 빼고 다시 작성해 주십시오.";
+  const low = all.replace(/\s+/g," ").toLowerCase();
+  if(SPAM_WORDS.some(w => low.includes(w.toLowerCase())))
+    return "광고·홍보성 글은 접수하지 않습니다. 세무 상담 내용만 작성해 주십시오.";
+  const msg = String(f.get("msg")||"");
+  const ko = (msg.match(/[가-힣]/g)||[]).length;
+  const letters = (msg.match(/[A-Za-zÀ-ɏЀ-ӿ؀-ۿ฀-๿぀-ヿ一-鿿]/g)||[]).length;
+  if(ko < 5 || ko < letters) return "문의 내용은 한국어로 작성해 주십시오. (외국어로 작성된 글은 접수하지 않습니다.)";
+  if(/(.)\1{9,}/.test(msg)) return "같은 글자를 반복한 글은 접수하지 않습니다.";
+  return "";
 }
 
 function renderFooter(){

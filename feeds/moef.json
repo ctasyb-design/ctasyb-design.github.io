@@ -2,8 +2,15 @@
   "ministry": "재정경제부",
   "source": "재정경제부 누리집 RSS",
   "list": "https://www.mofe.go.kr",
-  "updated": "2026-11-15",
+  "updated": "2026-11-16",
   "items": [
+    {
+      "title": "국유재산 안전관리 체계 고도화 추진",
+      "link": "http://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000079967",
+      "date": "2026-11-16",
+      "summary": "",
+      "tax": false
+    },
     {
       "title": "경제현안간담회 개최",
       "link": "http://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000079962",
@@ -215,13 +222,6 @@
       "tax": false
     },
     {
-      "title": "국제 신용평가사 Fitch, 한국 연례협의 실시",
-      "link": "http://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000079837",
-      "date": "2026-11-03",
-      "summary": "",
-      "tax": false
-    },
-    {
       "title": "물가관계차관회의 개최",
       "link": "http://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000079838",
       "date": "2026-11-03",
@@ -231,6 +231,13 @@
     {
       "title": "'26.10월 소비자물가 동향",
       "link": "http://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000079839",
+      "date": "2026-11-03",
+      "summary": "",
+      "tax": false
+    },
+    {
+      "title": "국제 신용평가사 Fitch, 한국 연례협의 실시",
+      "link": "http://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000079837",
       "date": "2026-11-03",
       "summary": "",
       "tax": false
@@ -276,13 +283,6 @@
       "date": "2026-10-30",
       "summary": "",
       "tax": false
-    },
-    {
-      "title": "한-독일 이중과세방지협정 개정의정서 서명",
-      "link": "http://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000079805",
-      "date": "2026-10-30",
-      "summary": "",
-      "tax": true
     }
   ]
 }

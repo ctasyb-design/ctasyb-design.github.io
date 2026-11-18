@@ -561,9 +561,9 @@ const VIEWS = {
 
     <section class="block"><div class="wrap">
       <div class="sec-head"><div><h2>최신 세법 개정 소식</h2><p>시행·시행예정·국회심사·정부안 단계를 구분해 매주 갱신합니다.</p></div>
-      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><span class="updated num">${fmt(S.laws.updated)} 확인</span><a class="btn outline" href="https://ctasyb-design.github.io/files/tax-law-update.pptx" download>PPT 자료 받기</a></div></div>
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><span class="updated num">${fmt(S.laws.updated)} 확인</span><a class="btn outline" href="https://ctasyb-design.github.io/files/tax-law-update.pptx" target="_blank" rel="noopener">PPT 자료 받기</a></div></div>
       <div class="laws">${S.laws.items.slice(0,4).map(lawItem).join("")}</div>
-      <p style="margin-top:18px;display:flex;gap:18px;flex-wrap:wrap;align-items:center"><a class="more" href="#laws">개정사항 ${S.laws.items.length}건 전체 보기</a><a class="more" href="https://ctasyb-design.github.io/files/tax-law-update.pptx" download>PPT 자료 받기 (${fmt(S.laws.updated)} 기준)</a></p>
+      <p style="margin-top:18px;display:flex;gap:18px;flex-wrap:wrap;align-items:center"><a class="more" href="#laws">개정사항 ${S.laws.items.length}건 전체 보기</a><a class="more" href="https://ctasyb-design.github.io/files/tax-law-update.pptx" target="_blank" rel="noopener">PPT 자료 받기 (${fmt(S.laws.updated)} 기준)</a></p>
     </div></section>
 
     ${S.moef ? `<section class="block" style="padding-top:0"><div class="wrap">
@@ -653,7 +653,7 @@ const VIEWS = {
     const cats = ["전체", ...new Set(S.laws.items.map(l=>l.category))];
     const sts = ["전체상태", ...Object.keys(S.laws.statusGuide)];
     return `<section class="block"><div class="wrap">
-      <div class="sec-head"><div><h2>세법 개정 소식</h2><p>매주 월요일 정부 발표·국회 심사·시행령 개정 내용을 확인해 갱신합니다.</p></div><div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><span class="updated num">${fmt(S.laws.updated)} 확인</span><a class="btn outline" href="https://ctasyb-design.github.io/files/tax-law-update.pptx" download>PPT 자료 받기</a></div></div>
+      <div class="sec-head"><div><h2>세법 개정 소식</h2><p>매주 월요일 정부 발표·국회 심사·시행령 개정 내용을 확인해 갱신합니다.</p></div><div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><span class="updated num">${fmt(S.laws.updated)} 확인</span><a class="btn outline" href="https://ctasyb-design.github.io/files/tax-law-update.pptx" target="_blank" rel="noopener">PPT 자료 받기</a></div></div>
       <div class="filters">${cats.map(c=>`<button class="chip ${S.lawFilter===c?"on":""}" data-cat="${esc(c)}">${esc(c)}</button>`).join("")}</div>
       <div class="filters"><select class="search" id="lawSt" style="flex:0 0 160px" aria-label="진행 단계">${sts.map(s=>`<option ${S.lawSt===s?"selected":""}>${esc(s)}</option>`).join("")}</select>
         <input class="search" id="lawQ" aria-label="키워드 검색" placeholder="키워드 검색 (예: 종부세, 법인세율, 연말정산)" value="${esc(S.lawQ)}"></div>

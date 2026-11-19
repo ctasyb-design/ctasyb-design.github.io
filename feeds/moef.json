@@ -2,8 +2,15 @@
   "ministry": "재정경제부",
   "source": "재정경제부 누리집 RSS",
   "list": "https://www.mofe.go.kr",
-  "updated": "2026-11-18",
+  "updated": "2026-11-19",
   "items": [
+    {
+      "title": "2026년 3분기말 대외채권채무 동향",
+      "link": "http://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000079995",
+      "date": "2026-11-19",
+      "summary": "",
+      "tax": false
+    },
     {
       "title": "경남창원 수출플러스간담회 개최",
       "link": "http://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000079984",
@@ -273,13 +280,6 @@
     {
       "title": "물가관계차관회의 개최",
       "link": "http://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000079838",
-      "date": "2026-11-03",
-      "summary": "",
-      "tax": false
-    },
-    {
-      "title": "'26.10월 소비자물가 동향",
-      "link": "http://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000079839",
       "date": "2026-11-03",
       "summary": "",
       "tax": false

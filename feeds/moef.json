@@ -2,8 +2,15 @@
   "ministry": "재정경제부",
   "source": "재정경제부 누리집 RSS",
   "list": "https://www.mofe.go.kr",
-  "updated": "2026-11-20",
+  "updated": "2026-11-22",
   "items": [
+    {
+      "title": "긴급 시장상황점검회의 개최",
+      "link": "http://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000080021",
+      "date": "2026-11-22",
+      "summary": "",
+      "tax": false
+    },
     {
       "title": "'26.11월 국고채 「모집 방식 비경쟁인수」 발행 미실시",
       "link": "http://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000080007",
@@ -273,13 +280,6 @@
     {
       "title": "범부처 민생안정지원단, 소상공인 재기 지원 현장 방문",
       "link": "http://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000079866",
-      "date": "2026-11-05",
-      "summary": "",
-      "tax": false
-    },
-    {
-      "title": "이형일 부총리, Fitch 연례협의단과 면담",
-      "link": "http://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000079878",
       "date": "2026-11-05",
       "summary": "",
       "tax": false

@@ -2,7 +2,7 @@
   "ministry": "재정경제부",
   "source": "재정경제부 누리집 RSS",
   "list": "https://www.mofe.go.kr",
-  "updated": "2026-11-22",
+  "updated": "2026-11-23",
   "items": [
     {
       "title": "긴급 시장상황점검회의 개최",
@@ -152,13 +152,6 @@
       "tax": false
     },
     {
-      "title": "제3차 글로벌 핵심 투자자 협의체 개최",
-      "link": "http://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000079922",
-      "date": "2026-11-11",
-      "summary": "",
-      "tax": false
-    },
-    {
       "title": "비상경제장관회의 개최",
       "link": "http://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000079917",
       "date": "2026-11-11",
@@ -196,6 +189,13 @@
     {
       "title": "아세안+3 역내 위기 대응 역량을 강화하는 신속금융 프로그램(RFF) 시행",
       "link": "http://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000079919",
+      "date": "2026-11-11",
+      "summary": "",
+      "tax": false
+    },
+    {
+      "title": "제3차 글로벌 핵심 투자자 협의체 개최",
+      "link": "http://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000079922",
       "date": "2026-11-11",
       "summary": "",
       "tax": false

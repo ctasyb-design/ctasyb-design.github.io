@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --indigo:#262f6b; --indigo-deep:#1a2150; --blue:#2a6ea6; --foil:#b8924a; --foil-light:#e6cd93;
+  --indigo:#1f4d3f; --indigo-deep:#143329; --blue:#2a6ea6; --foil:#b8924a; --foil-light:#e6cd93;
   --ink:#161b33; --sub:#545b73; --line:#dfe3ec; --mist:#f1f3f8; --white:#fff;
   --ok:#23704f; --ok-bg:#e8f4ee; --wait:#8a5a00; --wait-bg:#fdf3df; --plan:#5b6170; --plan-bg:#eef0f4; --soon:#2a6ea6; --soon-bg:#e7f0f8;
 }
@@ -65,10 +65,10 @@ nav.main a.call:hover{background:var(--indigo-deep)}
 .btn.outline:hover{background:var(--mist)}
 .btn small{font-weight:500;opacity:.85}
 .band{display:grid;grid-template-columns:38fr 62fr;height:14px}
-.band i{display:block}.band i:first-child{background:var(--blue)}.band i:last-child{background:#3a4691}
+.band i{display:block}.band i:first-child{background:var(--blue)}.band i:last-child{background:#2f6b58}
 
 /* tracker panel */
-.tracker{background:#fff;color:var(--ink);border-radius:16px;padding:26px 26px 22px;box-shadow:0 30px 60px -20px rgba(8,12,40,.55)}
+.tracker{background:#fff;color:var(--ink);border-radius:16px;padding:26px 26px 22px;box-shadow:0 30px 60px -20px rgba(6,22,17,.55)}
 .tracker h2{font-size:19px;margin:0 0 4px;color:var(--indigo)}
 .tracker .asof{font-size:13px;color:var(--sub);margin:0 0 18px}
 .steps{list-style:none;margin:0;padding:0;position:relative}
@@ -226,7 +226,7 @@ pre.out{white-space:pre-wrap;background:var(--mist);border:1px solid var(--line)
 @media(max-width:960px){.guides{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:520px){.guides{grid-template-columns:1fr}}
 a.gtile{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 16px;text-decoration:none;color:inherit;transition:border-color .15s,box-shadow .15s}
-a.gtile:hover{border-color:var(--indigo);box-shadow:0 6px 18px -10px rgba(38,47,107,.45)}
+a.gtile:hover{border-color:var(--indigo);box-shadow:0 6px 18px -10px rgba(31,77,63,.45)}
 a.gtile .ic{width:44px;height:44px;border-radius:10px;background:var(--indigo);color:var(--foil-light);display:grid;place-items:center;font-weight:700;font-size:18px}
 a.gtile b{display:block;font-size:16.5px;color:var(--indigo)}
 a.gtile span{display:block;font-size:13.5px;color:var(--sub);line-height:1.5}
@@ -296,9 +296,9 @@ nav.main a.kakao-nav:hover{background:#f2d900}
 nav.main a.kakao-nav + a.call{margin-left:6px}
 nav.main a.kakao-nav svg{width:16px;height:16px}
 @media(max-width:1240px){nav.main a.kakao-nav{margin:8px 0 0;justify-content:center}}
-.modal{position:fixed;inset:0;background:rgba(14,18,44,.55);display:none;align-items:center;justify-content:center;z-index:100;padding:20px}
+.modal{position:fixed;inset:0;background:rgba(10,26,21,.55);display:none;align-items:center;justify-content:center;z-index:100;padding:20px}
 .modal.open{display:flex}
-.modal .box{background:#fff;border-radius:16px;max-width:420px;width:100%;padding:26px 24px 22px;box-shadow:0 30px 60px -20px rgba(8,12,40,.6)}
+.modal .box{background:#fff;border-radius:16px;max-width:420px;width:100%;padding:26px 24px 22px;box-shadow:0 30px 60px -20px rgba(6,22,17,.6)}
 .modal h3{margin:0 0 6px;font-size:20px;color:var(--indigo);display:flex;align-items:center;gap:8px}
 .modal h3 i{width:30px;height:30px;border-radius:8px;background:#fee500;display:grid;place-items:center}
 .modal h3 i svg{width:18px;height:18px}
@@ -337,7 +337,7 @@ footer .disc{margin-top:18px;border-top:1px solid rgba(255,255,255,.1);padding-t
   </div>
 </header>
 
-<nav aria-label="전체 페이지" style="position:absolute;left:-9999px"><a href="/blog/crypto-tax-deferral-2029.html">가상자산 과세 2029년으로 2년 유예 추진 — 손실 3년 이월공제까지, 투자자가 확인할 4가지</a><a href="/blog/fake-33-labor-inspection-2026.html">‘가짜 3.3’ 위장고용 기획감독 11월 16일 착수 — 사업주가 지금 점검할 5가지</a><a href="/blog/2026-tax-reform-summary.html">2026년 세법개정안, 국회 심사 시작 — 지금 확인해야 할 7가지</a><a href="/blog/one-house-residence-basis.html">1주택자 종부세·양도세, ‘보유’에서 ‘거주’로 — 수정된 정부안 핵심 비교</a><a href="/blog/corporate-tax-rate-2026-closing.html">법인세율 1%p 인상 첫 결산 — 12월 결산법인 연내 점검 체크리스트</a><a href="/blog/yearend-settlement-2026.html">2026년 귀속 연말정산 미리보기 — 자녀 예체능 학원비부터 카드 공제 한도까지</a><a href="/blog/sole-proprietor-h2-2026.html">개인사업자 2기 부가세 전 점검 — 간이과세 전환·가산세 4%·노란우산 1,800만원</a><a href="/blog/integrated-employment-credit-2026.html">통합고용세액공제 2026년 개편 — 오래 고용할수록 커지는 공제, 추징 걱정은 줄었다</a><a href="/guide/onboard.html">거래처 수임등록 안내</a><a href="/guide/vat.html">부가가치세</a><a href="/guide/income.html">종합소득세</a><a href="/guide/corp.html">법인세</a><a href="/guide/transfer.html">양도소득세</a><a href="/guide/gift.html">증여세</a><a href="/guide/inherit.html">상속세</a></nav>
+<nav aria-label="전체 페이지" style="position:absolute;left:-9999px"><a href="/blog/income-tax-interim-prepayment-2026.html">종합소득세 중간예납 11월 30일 마감 — 실적 줄었다면 추계액 신고, 1천만원 넘으면 분납</a><a href="/blog/crypto-tax-deferral-2029.html">가상자산 과세 2029년으로 2년 유예 추진 — 손실 3년 이월공제까지, 투자자가 확인할 4가지</a><a href="/blog/fake-33-labor-inspection-2026.html">‘가짜 3.3’ 위장고용 기획감독 11월 16일 착수 — 사업주가 지금 점검할 5가지</a><a href="/blog/2026-tax-reform-summary.html">2026년 세법개정안, 국회 심사 시작 — 지금 확인해야 할 7가지</a><a href="/blog/one-house-residence-basis.html">1주택자 종부세·양도세, ‘보유’에서 ‘거주’로 — 수정된 정부안 핵심 비교</a><a href="/blog/corporate-tax-rate-2026-closing.html">법인세율 1%p 인상 첫 결산 — 12월 결산법인 연내 점검 체크리스트</a><a href="/blog/yearend-settlement-2026.html">2026년 귀속 연말정산 미리보기 — 자녀 예체능 학원비부터 카드 공제 한도까지</a><a href="/blog/sole-proprietor-h2-2026.html">개인사업자 2기 부가세 전 점검 — 간이과세 전환·가산세 4%·노란우산 1,800만원</a><a href="/blog/integrated-employment-credit-2026.html">통합고용세액공제 2026년 개편 — 오래 고용할수록 커지는 공제, 추징 걱정은 줄었다</a><a href="/guide/onboard.html">거래처 수임등록 안내</a><a href="/guide/vat.html">부가가치세</a><a href="/guide/income.html">종합소득세</a><a href="/guide/corp.html">법인세</a><a href="/guide/transfer.html">양도소득세</a><a href="/guide/gift.html">증여세</a><a href="/guide/inherit.html">상속세</a></nav>
 <main id="app"><div class="empty">불러오는 중…</div></main>
 
 <div class="modal" id="kakaoModal" role="dialog" aria-modal="true" aria-labelledby="kakaoTitle"><div class="box">
@@ -567,9 +567,9 @@ const VIEWS = {
     </div></section>
 
     ${S.moef ? `<section class="block" style="padding-top:0"><div class="wrap">
-      <div class="sec-head"><div><h2>재정경제부 보도자료</h2><p>옛 기획재정부. 새 보도자료가 나오면 2시간 안에 자동으로 올라옵니다.</p></div><span class="updated num">${fmt(S.moef.updated)} 확인</span></div>
+      <div class="sec-head"><div><h2>재정경제부 보도자료</h2><p>옛 기획재정부. 세법·세무 관련 보도자료만 골라 매일 업데이트합니다.</p></div><span class="updated num">${fmt(S.moef.updated)} 확인</span></div>
       <div class="press">${pressRows(pressList("전체",5))}</div>
-      <p style="margin-top:18px"><a class="more" href="#press">보도자료 전체 보기 (세제 관련 ${pressList("세제").length}건)</a></p>
+      <p style="margin-top:18px"><a class="more" href="#press">세법·세무 보도자료 전체 보기 (${pressList("전체").length}건)</a></p>
     </div></section>` : ""}
 
     <section class="block tint"><div class="wrap two">
@@ -639,13 +639,13 @@ const VIEWS = {
     </div></section>`;
   },
   press(){
-    const notes = S.posts.items.filter(p=>p.press);
+    const notes = S.posts.items.filter(p=>/세|노동|노무|4대보험|연말정산/.test(p.category||"")).slice(0,4);
     const list = pressList(S.pressFilter);
     return `<section class="block"><div class="wrap">
-      <div class="sec-head"><div><h2>보도자료</h2><p>재정경제부(옛 기획재정부) 보도자료를 자동으로 모아 보여드립니다. 세금과 관련된 자료는 <span class="taxb">세제</span>로 표시합니다.</p></div>${S.moef?`<span class="updated num">${fmt(S.moef.updated)} 확인</span>`:""}</div>
-      ${notes.length ? `<h3 style="color:var(--indigo);margin:0 0 12px">사무소 해설</h3><div class="pnote">${notes.map(p=>`<a href="#post-${esc(p.id)}"><span>${esc(p.press.ministry)} 보도자료 · ${fmt(p.press.date)}</span><b>${esc(p.title)}</b><span>${esc(p.summary)}</span></a>`).join("")}</div>` : ""}
+      <div class="sec-head"><div><h2>보도자료</h2><p>재정경제부(옛 기획재정부) 보도자료 중 세법·세무 관련 자료만 골라 매일 업데이트합니다.</p></div>${S.moef?`<span class="updated num">${fmt(S.moef.updated)} 확인</span>`:""}</div>
+      ${notes.length ? `<h3 style="color:var(--indigo);margin:0 0 12px">사무소 해설</h3><div class="pnote">${notes.map(p=>`<a href="#post-${esc(p.id)}"><span>${p.press ? `${esc(p.press.ministry)} 보도자료 · ${fmt(p.press.date)}` : `${esc(p.category)} · ${fmt(p.date)}`}</span><b>${esc(p.title)}</b><span>${esc(p.summary)}</span></a>`).join("")}</div>` : ""}
       <h3 style="color:var(--indigo);margin:30px 0 12px">재정경제부 보도자료</h3>
-      <div class="filters">${["세제","전체"].map(c=>`<button class="chip ${S.pressFilter===c?"on":""}" data-pf="${c}">${c==="세제"?"세제 관련":"전체"}</button>`).join("")}<a class="more" style="margin-left:auto" href="https://www.mofe.go.kr" target="_blank" rel="noopener">재정경제부 누리집</a></div>
+      <div class="filters"><a class="more" style="margin-left:auto" href="https://www.mofe.go.kr" target="_blank" rel="noopener">재정경제부 누리집</a></div>
       <div class="press">${S.moef ? (pressRows(list) || '<div class="empty">해당하는 보도자료가 없습니다.</div>') : '<div class="empty">보도자료 목록을 준비하고 있습니다. 재정경제부 누리집에서 확인하실 수 있습니다.</div>'}</div>
       ${ctaBox()}</div></section>`;
   },

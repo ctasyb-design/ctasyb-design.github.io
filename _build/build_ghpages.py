@@ -21,11 +21,12 @@ open(f'{OUT}/assets-style.css', 'w').write(css)
 import base64
 open(f'{OUT}/logo.png', 'wb').write(base64.b64decode(logo.split(',', 1)[1]))
 
-def page(title, desc, path, body):
+def page(title, desc, path, body, image=None):
     url = f'{BASE}/{path}'
+    og_img = f'<meta property="og:image" content="{BASE}/{image}">' if image else ''
     return f'''<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{e(title)}</title><meta name="description" content="{e(desc)}"><link rel="canonical" href="{url}">
-<meta property="og:type" content="article"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(desc)}"><meta property="og:url" content="{url}">
+<meta property="og:type" content="article"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(desc)}"><meta property="og:url" content="{url}">{og_img}
 {fonts}<link rel="stylesheet" href="/assets-style.css"></head><body>
 <header class="top"><div class="wrap"><a class="brand" href="/"><img class="logo" src="/logo.png" alt="{e(office['name'])} 로고"><span><b>{e(office['name'])}</b><small>부산·경남 세무·회계</small></span></a>
 <nav class="main" style="display:flex"><a href="/">홈</a><a href="/#guide">세목별 안내</a><a href="/blog/">세무 블로그</a><a href="https://blog.naver.com/ctasyb" target="_blank" rel="noopener">네이버 블로그</a><a href="/#contact" class="call">상담 신청</a></nav></div></header>
@@ -34,12 +35,22 @@ def page(title, desc, path, body):
 </div></div></section></main>
 <footer><div class="wrap"><b>{e(office['name'])}</b> · {e(office['ceo'])}<br>{e(office['address'])}<br>전화 {e(office['phone'])} · 팩스 {e(office['fax'])} · {e(office['email'])}</div><div class="band"><i></i><i></i></div></footer></body></html>'''
 
+def card_img(p):
+    if not p.get('card'): return ''
+    c = p['card']; alt = e(f"{c['l1']} {c['l2']} {c['l3']}")
+    return f'<img class="post-card" src="/cards/{p["id"]}.png" alt="{alt}">'
+def thumb(p):
+    return f'<img class="pthumb" src="/cards/{p["id"]}.png" alt="" loading="lazy">' if p.get('card') else ''
+import shutil
+if os.path.isdir(os.path.join(SRC, 'cards')):
+    shutil.copytree(os.path.join(SRC, 'cards'), os.path.join(OUT, 'cards'), dirs_exist_ok=True)
+
 urls = [('', '1.0')]
 for p in posts:
-    body = f'<a class="more" href="/blog/">세무 블로그 목록</a><div class="meta" style="margin-top:22px"><span class="tag">{e(p["category"])}</span><span>{p["date"]}</span><span>대상: {e(p["target"])}</span><span>{e(office["ceo"])}</span></div><h1>{e(p["title"])}</h1><article class="post-body">{p["body"].replace("<table>","<div class=\"tblwrap\"><table>").replace("</table>","</table></div>")}<div class="kw">{"".join(f"<span>#{e(k)}</span>" for k in p["keywords"])}</div></article>'
-    open(f'{OUT}/blog/{p["id"]}.html', 'w').write(page(f'{p["title"]} | {office["name"]}', p['summary'], f'blog/{p["id"]}.html', body))
+    body = f'<a class="more" href="/blog/">세무 블로그 목록</a><div class="meta" style="margin-top:22px"><span class="tag">{e(p["category"])}</span><span>{p["date"]}</span><span>대상: {e(p["target"])}</span><span>{e(office["ceo"])}</span></div><h1>{e(p["title"])}</h1>{card_img(p)}<article class="post-body">{p["body"].replace("<table>","<div class=\"tblwrap\"><table>").replace("</table>","</table></div>")}<div class="kw">{"".join(f"<span>#{e(k)}</span>" for k in p["keywords"])}</div></article>'
+    open(f'{OUT}/blog/{p["id"]}.html', 'w').write(page(f'{p["title"]} | {office["name"]}', p['summary'], f'blog/{p["id"]}.html', body, f'cards/{p["id"]}.png' if p.get('card') else None))
     urls.append((f'blog/{p["id"]}.html', '0.8'))
-lst = ''.join(f'<a class="post" href="/blog/{p["id"]}.html"><div class="pd num">{p["date"]}<br><span class="tag">{e(p["category"])}</span></div><div><h3>{e(p["title"])}</h3><p>{e(p["summary"])}</p></div></a>' for p in posts)
+lst = ''.join(f'<a class="post{" has-card" if p.get("card") else ""}" href="/blog/{p["id"]}.html"><div class="pd num">{p["date"]}<br><span class="tag">{e(p["category"])}</span></div><div><h3>{e(p["title"])}</h3><p>{e(p["summary"])}</p></div>{thumb(p)}</a>' for p in posts)
 open(f'{OUT}/blog/index.html', 'w').write(page(f'세무 블로그 | {office["name"]}', '부산·경남 신영범세무회계사무소의 세법 해설과 절세 가이드', 'blog/', f'<h1>세무 블로그</h1><div class="posts">{lst}</div>'))
 urls.append(('blog/', '0.9'))
 for g in guides['items']:

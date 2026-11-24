@@ -5,3 +5,5 @@ set -e
 OUT="$1"; REPO="$2"
 for f in index.html assets-style.css logo.png sitemap.xml robots.txt; do cp "$OUT/$f" "$REPO/$f"; done
 for d in blog guide data; do rm -rf "$REPO/$d"; cp -r "$OUT/$d" "$REPO/$d"; done
+# 블로그 대표 이미지(cards/)는 덮어쓰기만 합니다(지우지 않음).
+if [ -d "$OUT/cards" ]; then mkdir -p "$REPO/cards"; cp "$OUT"/cards/*.png "$REPO/cards/"; fi

@@ -79,7 +79,7 @@
       "link": "http://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000079971",
       "date": "2026-11-16",
       "summary": "",
-      "tax": false
+      "tax": true
     },
     {
       "title": "전략경제자문단 AI에이전트커머스분과 현장방문",
@@ -283,6 +283,20 @@
       "date": "2026-11-05",
       "summary": "",
       "tax": false
+    },
+    {
+      "title": "한-독일 이중과세방지협정 개정의정서 서명",
+      "link": "http://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000079805",
+      "date": "2026-10-30",
+      "summary": "",
+      "tax": true
+    },
+    {
+      "title": "'26.9월 국세수입 동향",
+      "link": "http://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000079808",
+      "date": "2026-10-30",
+      "summary": "",
+      "tax": true
     }
   ]
 }

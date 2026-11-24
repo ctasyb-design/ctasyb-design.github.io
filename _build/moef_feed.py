@@ -11,7 +11,7 @@ CANDIDATES = [
     ("정책브리핑 부처별 RSS", "https://www.korea.kr/rss/dept_mofe.xml", False),
     ("정책브리핑 보도자료 RSS", "https://www.korea.kr/rss/pressrelease.xml", True),
 ]
-TAX = re.compile(r"세제|세법|조세|과세|비과세|감면|세액|공제|소득세|법인세|부가가치세|부가세|상속세|증여세|종부세|종합부동산|양도세|양도소득|관세|국세|지방세|세수|개별소비세|교통세|증권거래세|가산세|원천징수|세율|탈세|면세")
+TAX = re.compile(r"세제|세법|세무|조세|과세|비과세|감면|세액|공제|소득세|법인세|부가가치세|부가세|상속세|증여세|종부세|종합부동산|양도세|양도소득|관세|국세|지방세|세수|개별소비세|교통세|증권거래세|가산세|원천징수|세율|탈세|면세")
 def text(el, tag):
     v = el.findtext(tag)
     if v is None:
@@ -60,8 +60,11 @@ seen, merged = set(), []
 for i in items + old:
     if i["link"] in seen: continue
     seen.add(i["link"]); merged.append(i)
+for i in merged: i["tax"] = bool(TAX.search(i["title"] + " " + i.get("summary", "")))
 merged.sort(key=lambda x: x.get("date", ""), reverse=True)
-merged = merged[:40]
+# 최근 40건 + 최근 1년 안의 세법·세무 관련 자료는 계속 보관(홈페이지 세무 블로그 하단 목록용)
+cut = (datetime.datetime.now(KST).date() - datetime.timedelta(days=365)).isoformat()
+merged = [i for n, i in enumerate(merged) if n < 40 or (i["tax"] and i.get("date", "") >= cut)]
 if merged == old: print("변경 없음"); sys.exit(0)
 json.dump({"ministry": MINISTRY, "source": used, "list": "https://www.mofe.go.kr", "updated": datetime.datetime.now(KST).date().isoformat(), "items": merged},
           open(OUT, "w", encoding="utf-8"), ensure_ascii=False, indent=2)

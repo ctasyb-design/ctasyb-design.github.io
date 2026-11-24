@@ -332,7 +332,6 @@ footer .disc{margin-top:18px;border-top:1px solid rgba(255,255,255,.1);padding-t
       <a href="#services" data-v="services">업무분야</a>
       <a href="#guide" data-v="guide">세목별 안내</a>
       <a href="#laws" data-v="laws">세법 개정 소식</a>
-      <a href="#press" data-v="press">보도자료</a>
       <a href="#blog" data-v="blog">세무 블로그</a>
       <a href="#" class="kakao-nav" id="navKakao" data-kakao><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#191919" d="M12 3.5C6.75 3.5 2.5 6.86 2.5 11c0 2.62 1.7 4.92 4.28 6.26l-.9 3.3c-.08.3.26.54.52.37l3.94-2.6c.53.07 1.08.11 1.66.11 5.25 0 9.5-3.36 9.5-7.5S17.25 3.5 12 3.5z"/></svg>카카오톡 상담</a>
       <a href="#contact" data-v="contact" class="call">상담 신청</a>
@@ -569,11 +568,6 @@ const VIEWS = {
       <p style="margin-top:18px;display:flex;gap:18px;flex-wrap:wrap;align-items:center"><a class="more" href="#laws">개정사항 ${S.laws.items.length}건 전체 보기</a><a class="more" href="https://ctasyb-design.github.io/files/tax-law-update.pptx" target="_blank" rel="noopener">PPT 자료 받기 (${fmt(S.laws.updated)} 기준)</a></p>
     </div></section>
 
-    ${S.moef ? `<section class="block" style="padding-top:0"><div class="wrap">
-      <div class="sec-head"><div><h2>재정경제부 보도자료</h2><p>옛 기획재정부. 세법·세무 관련 보도자료만 골라 매일 업데이트합니다.</p></div><span class="updated num">${fmt(S.moef.updated)} 확인</span></div>
-      <div class="press">${pressRows(pressList("전체",5))}</div>
-      <p style="margin-top:18px"><a class="more" href="#press">세법·세무 보도자료 전체 보기 (${pressList("전체").length}건)</a></p>
-    </div></section>` : ""}
 
     <section class="block tint"><div class="wrap two">
       <div><div class="sec-head"><div><h2>세무 블로그</h2><p>바뀐 세법을 상황별로 풀어 쓴 실무 가이드</p></div></div>
@@ -641,17 +635,6 @@ const VIEWS = {
       <div class="guides">${S.guides.items.map(x=>gTile(x, g.id)).join("")}</div>
     </div></section>`;
   },
-  press(){
-    const notes = S.posts.items.filter(p=>/세|노동|노무|4대보험|연말정산/.test(p.category||"")).slice(0,4);
-    const list = pressList(S.pressFilter);
-    return `<section class="block"><div class="wrap">
-      <div class="sec-head"><div><h2>보도자료</h2><p>재정경제부(옛 기획재정부) 보도자료 중 세법·세무 관련 자료만 골라 매일 업데이트합니다.</p></div>${S.moef?`<span class="updated num">${fmt(S.moef.updated)} 확인</span>`:""}</div>
-      ${notes.length ? `<h3 style="color:var(--indigo);margin:0 0 12px">사무소 해설</h3><div class="pnote">${notes.map(p=>`<a href="#post-${esc(p.id)}"><span>${p.press ? `${esc(p.press.ministry)} 보도자료 · ${fmt(p.press.date)}` : `${esc(p.category)} · ${fmt(p.date)}`}</span><b>${esc(p.title)}</b><span>${esc(p.summary)}</span></a>`).join("")}</div>` : ""}
-      <h3 style="color:var(--indigo);margin:30px 0 12px">재정경제부 보도자료</h3>
-      <div class="filters"><a class="more" style="margin-left:auto" href="https://www.mofe.go.kr" target="_blank" rel="noopener">재정경제부 누리집</a></div>
-      <div class="press">${S.moef ? (pressRows(list) || '<div class="empty">해당하는 보도자료가 없습니다.</div>') : '<div class="empty">보도자료 목록을 준비하고 있습니다. 재정경제부 누리집에서 확인하실 수 있습니다.</div>'}</div>
-      ${ctaBox()}</div></section>`;
-  },
   laws(){
     const cats = ["전체", ...new Set(S.laws.items.map(l=>l.category))];
     const sts = ["전체상태", ...Object.keys(S.laws.statusGuide)];
@@ -670,7 +653,11 @@ const VIEWS = {
     return `<section class="block"><div class="wrap" style="max-width:900px">
       <div class="sec-head"><div><h2>세무 블로그</h2><p>바뀐 세법을 내 상황에 맞게 해석해 드리는 실무 가이드입니다.</p></div></div>
       <div class="filters">${cats.map(c=>`<button class="chip ${S.blogFilter===c?"on":""}" data-bcat="${esc(c)}">${esc(c)}</button>`).join("")}</div>
-      <div class="posts">${list.map(postRow).join("") || '<div class="empty">글이 없습니다.</div>'}</div>${naverBox(6)}</div></section>`;
+      <div class="posts">${list.map(postRow).join("") || '<div class="empty">글이 없습니다.</div>'}</div>${naverBox(6)}
+      <div class="sec-head" style="margin-top:56px"><div><h2 style="font-size:24px">재정경제부 보도자료</h2><p>옛 기획재정부. 세법·세무 관련 보도자료만 골라 매일 업데이트합니다. 제목을 누르면 원문이 열립니다.</p></div>${S.moef?`<span class="updated num">${fmt(S.moef.updated)} 확인</span>`:""}</div>
+      <div class="press">${S.moef ? (pressRows(pressList("세제",10)) || '<div class="empty">최근 세법·세무 관련 보도자료가 없습니다.</div>') : '<div class="empty">보도자료 목록을 준비하고 있습니다.</div>'}</div>
+      <p style="margin-top:14px"><a class="more" href="https://www.mofe.go.kr" target="_blank" rel="noopener">재정경제부 누리집에서 전체 보기</a></p>
+    </div></section>`;
   },
   contact(){
     const o = S.office;
@@ -734,6 +721,7 @@ function route(){
   let v = h, arg = null;
   if(h.startsWith("post-")){ v = "post"; arg = h.slice(5); }
   if(h.startsWith("guide-")){ v = "guideDetail"; arg = h.slice(6); }
+  if(v==="press") v = "blog";
   if(!VIEWS[v]) v = "home";
   $("#app").innerHTML = VIEWS[v](arg);
   document.querySelectorAll("nav.main a").forEach(a => a.classList.toggle("on", a.dataset.v === (v==="post"?"blog":v==="guideDetail"?"guide":v) && !a.classList.contains("call")));
@@ -765,9 +753,6 @@ function bind(v, arg){
     document.querySelectorAll("[data-cat]").forEach(b => b.onclick = () => { S.lawFilter = b.dataset.cat; document.querySelectorAll("[data-cat]").forEach(x=>x.classList.toggle("on", x===b)); renderLawList(); });
     $("#lawQ").oninput = e => { S.lawQ = e.target.value; renderLawList(); };
     $("#lawSt").onchange = e => { S.lawSt = e.target.value; renderLawList(); };
-  }
-  if(v==="press"){
-    document.querySelectorAll("[data-pf]").forEach(b => b.onclick = () => { S.pressFilter = b.dataset.pf; $("#app").innerHTML = VIEWS.press(); bind("press"); });
   }
   if(v==="blog"){
     document.querySelectorAll("[data-bcat]").forEach(b => b.onclick = () => { S.blogFilter = b.dataset.bcat; $("#app").innerHTML = VIEWS.blog(); bind("blog"); });

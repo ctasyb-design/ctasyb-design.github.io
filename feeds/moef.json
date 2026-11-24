@@ -2,8 +2,15 @@
   "ministry": "재정경제부",
   "source": "재정경제부 누리집 RSS",
   "list": "https://www.mofe.go.kr",
-  "updated": "2026-11-23",
+  "updated": "2026-11-24",
   "items": [
+    {
+      "title": "「아세안+3 재무차관 및 중앙은행 부총재 회의」 참석",
+      "link": "http://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000080033",
+      "date": "2026-11-24",
+      "summary": "",
+      "tax": false
+    },
     {
       "title": "‘쉬었음’ 청년을 다시 내:일로… 청년일자리팀, 제2회 ‘국민 체감 대상’",
       "link": "http://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000080028",
@@ -276,13 +283,6 @@
       "date": "2026-11-05",
       "summary": "",
       "tax": true
-    },
-    {
-      "title": "시장상황점검회의 개최",
-      "link": "http://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000079867",
-      "date": "2026-11-05",
-      "summary": "",
-      "tax": false
     },
     {
       "title": "한-독일 이중과세방지협정 개정의정서 서명",

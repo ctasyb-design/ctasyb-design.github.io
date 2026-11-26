@@ -2,8 +2,29 @@
   "ministry": "재정경제부",
   "source": "재정경제부 누리집 RSS",
   "list": "https://www.mofe.go.kr",
-  "updated": "2026-11-24",
+  "updated": "2026-11-26",
   "items": [
+    {
+      "title": "개인투자용 국채 12월 발행 미실시",
+      "link": "http://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000080049",
+      "date": "2026-11-26",
+      "summary": "",
+      "tax": false
+    },
+    {
+      "title": "권대영 1차관, 「월급방위대 TF」 2차 회의 개최",
+      "link": "http://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000080055",
+      "date": "2026-11-26",
+      "summary": "",
+      "tax": false
+    },
+    {
+      "title": "AI시대, 전략산업의 미래를 위한 정책과제 제안",
+      "link": "http://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000080058",
+      "date": "2026-11-26",
+      "summary": "",
+      "tax": false
+    },
     {
       "title": "2026 다자개발은행(MDB) 프로젝트 플라자 개최",
       "link": "http://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000080029",
@@ -259,27 +280,6 @@
     {
       "title": "제276차 대외경제장관회의 개최",
       "link": "http://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000079883",
-      "date": "2026-11-06",
-      "summary": "",
-      "tax": false
-    },
-    {
-      "title": "이형일 부총리, 코리아그랜드페스티벌x행복한 백화점 현장행보",
-      "link": "http://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000079882",
-      "date": "2026-11-06",
-      "summary": "",
-      "tax": false
-    },
-    {
-      "title": "[보도참고] 세계은행그룹 부총재에 두 번째 한국인 진출",
-      "link": "http://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000079886",
-      "date": "2026-11-06",
-      "summary": "",
-      "tax": false
-    },
-    {
-      "title": "긴급 시장상황점검회의 개최",
-      "link": "http://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000079890",
       "date": "2026-11-06",
       "summary": "",
       "tax": false

@@ -97,13 +97,21 @@ for p in posts:
 lst = ''.join(f'<a class="post{" has-card" if p.get("card") else ""}" href="/blog/{p["id"]}.html"><div class="pd num">{p["date"]}<br><span class="tag">{e(p["category"])}</span></div><div><h3>{e(p["title"])}</h3><p>{e(p["summary"])}</p></div>{thumb(p)}</a>' for p in posts)
 open(f'{OUT}/blog/index.html', 'w').write(page(f'세무 블로그 | {office["name"]}', '부산·경남 신영범세무회계사무소의 세법 해설과 절세 가이드', 'blog/', f'<h1>세무 블로그</h1><div class="posts">{lst}</div>'))
 urls.append(('blog/', '0.9'))
+_cp = os.path.join(SRC, 'data', 'columns.json')
+_allcols = sorted(json.load(open(_cp))['items'], key=lambda c: c['no'], reverse=True) if os.path.exists(_cp) else []
+def gcols(g):
+    cs = [c for c in _allcols if c['category'] == g['name']]
+    if not cs: return ''
+    items = ''.join(f'<a href="/column/{c["id"]}.html"><span class="no num">{c["no"]}</span><div><h3>{e(c["title"])}</h3><p>{e(c["summary"])}</p></div></a>' for c in cs)
+    return f'<h2 style="font-size:22px;margin-top:40px">{e(g["name"])} 세무 칼럼 ({len(cs)}편)</h2><div class="col-list">{items}</div>'
 for g in guides['items']:
     t = g['name'] if g['name'].endswith('안내') else g['name'] + ' 안내'
     rows = ''.join(f'<tr><td>{e(r[0])}</td><td><b>{e(r[1])}</b></td><td>{e(r[2])}</td></tr>' for r in g['deadlines'])
     body = (f'<a class="more" href="/#guide">세목별 안내</a><h1 style="margin-top:18px">{e(t)}</h1><p class="meta">대상: {e(g["who"])}</p>'
             f'<div class="post-body"><p class="lead">{e(g["lead"])}</p><h3>기한·절차</h3><div class="tblwrap"><table><thead><tr><th>구분</th><th>기한</th><th>비고</th></tr></thead><tbody>{rows}</tbody></table></div>'
             f'<h3>준비 서류</h3><ul>{"".join(f"<li>{e(d)}</li>" for d in g["docs"])}</ul><h3>알아두실 점</h3><ul>{"".join(f"<li>{e(n)}</li>" for n in g["notes"])}</ul>'
-            + (f'<p><a class="btn outline" href="/#guide-{g["id"]}">모의계산 해 보기</a></p>' if g.get('calc') else '') + '</div>')
+            + (f'<p><a class="btn outline" href="/#guide-{g["id"]}">모의계산 해 보기</a></p>' if g.get('calc') else '') + '</div>'
+            + gcols(g))
     open(f'{OUT}/guide/{g["id"]}.html', 'w').write(page(f'{t} | {office["name"]}', g['lead'], f'guide/{g["id"]}.html', body))
     urls.append((f'guide/{g["id"]}.html', '0.7'))
 glst = ''.join(f'<a class="post" href="/guide/{g["id"]}.html"><div><h3>{e(g["name"])}</h3><p>{e(g["lead"])}</p></div></a>' for g in guides['items'])

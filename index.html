@@ -354,6 +354,7 @@ footer .disc{margin-top:18px;border-top:1px solid rgba(255,255,255,.1);padding-t
   body{padding-bottom:64px}
 }
 .post-body p.rights{font-size:13px;color:#6b7280;border-top:1px solid #e5e7eb;margin-top:28px;padding-top:14px;line-height:1.7}.post-body p.rights a{color:inherit;text-decoration:underline}
+a.gtile small.gcols{display:inline-block;margin-top:6px;font-size:12px;font-weight:600;color:var(--indigo);background:#eef1fa;border-radius:999px;padding:2px 9px}
 </style>
 <link rel="canonical" href="https://ctasyb-design.github.io/"><meta property="og:type" content="website"><meta property="og:title" content="신영범세무회계사무소 | 부산·경남 세무사"><meta property="og:description" content="법인세·부가가치세·종합소득세·양도·상속·증여 상담. 최신 세법 개정 소식 매주 업데이트."><meta property="og:url" content="https://ctasyb-design.github.io/">
 </head>
@@ -545,8 +546,11 @@ function ctaBox(){
 }
 
 const gTitle = n => /안내$/.test(n) ? n : n + " 안내";
+/* 세목별 안내 ↔ 세무 칼럼 연결: 칼럼의 분야(category)가 안내의 세목 이름과 같으면 그 세목에 붙습니다 */
+const colsFor = g => (((S.cols&&S.cols.items)||[]).filter(c => c.category === g.name)).sort((a,b)=>b.no-a.no);
 function gTile(g, cur){
-  return `<a class="gtile ${cur===g.id?"cur":""}" href="#guide-${esc(g.id)}"><span class="ic">${esc(g.icon)}</span><span><b>${esc(g.name)}${g.calc?'<em>모의계산</em>':""}</b><span>${esc(g.short)}</span></span></a>`;
+  const n = colsFor(g).length;
+  return `<a class="gtile ${cur===g.id?"cur":""}" href="#guide-${esc(g.id)}"><span class="ic">${esc(g.icon)}</span><span><b>${esc(g.name)}${g.calc?'<em>모의계산</em>':""}</b><span>${esc(g.short)}</span>${n?`<small class="gcols">세무 칼럼 ${n}편</small>`:""}</span></a>`;
 }
 const won = n => (Math.round(n)).toLocaleString("ko-KR") + "원";
 const pnum = v => { const n = Number(String(v||"").replace(/[^0-9.]/g,"")); return isFinite(n) ? n : 0; };
@@ -724,6 +728,7 @@ const VIEWS = {
       ${g.calc ? `<div class="gsec calc"><div><h2>간단 모의계산</h2><div class="fields" id="calcForm">${CALC_FORMS[g.calc]()}</div></div><div class="res" id="calcRes" aria-live="polite"></div></div>` : ""}
       <div class="gsec"><h2>알아두실 점</h2><ul class="gnotes">${g.notes.map(n=>`<li>${esc(n)}</li>`).join("")}</ul>
         ${g.calc ? `<p class="meta">${esc(S.guides.basis)} 모의계산은 참고용이며 실제 세액은 사실관계에 따라 달라집니다.</p>` : ""}</div>
+      ${(()=>{ const cs = colsFor(g); return cs.length ? `<div class="gsec"><h2>${esc(g.name)} 세무 칼럼 <span class="num" style="font-size:.7em;color:var(--sub);font-weight:500">${cs.length}편</span></h2><p class="meta" style="margin:-4px 0 12px">실무에서 자주 묻는 ${esc(g.name)} 쟁점을 법령 근거와 계산 예시로 정리했습니다. 새 칼럼은 매일 자동으로 추가됩니다.</p><div class="col-list">${cs.map(colRow).join("")}</div></div>` : ""; })()}
       <div class="sec-head" style="margin-top:48px"><div><h2 style="font-size:22px">다른 세목 안내</h2></div></div>
       <div class="guides">${S.guides.items.map(x=>gTile(x, g.id)).join("")}</div>
     </div></section>`;

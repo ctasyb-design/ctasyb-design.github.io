@@ -2,8 +2,15 @@
   "ministry": "재정경제부",
   "source": "재정경제부 누리집 RSS",
   "list": "https://www.mofe.go.kr",
-  "updated": "2026-11-26",
+  "updated": "2026-11-27",
   "items": [
+    {
+      "title": "「한중일 및 아세안+3 재무차관 및 중앙은행  부총재 회의」 참석 및 주요인사 면담 결과",
+      "link": "http://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000080066",
+      "date": "2026-11-27",
+      "summary": "",
+      "tax": false
+    },
     {
       "title": "개인투자용 국채 12월 발행 미실시",
       "link": "http://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000080049",
@@ -273,13 +280,6 @@
     {
       "title": "제3차 글로벌 핵심 투자자 협의체 개최",
       "link": "http://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000079922",
-      "date": "2026-11-11",
-      "summary": "",
-      "tax": false
-    },
-    {
-      "title": "한-ADB 고위급 연례협의 개최",
-      "link": "http://www.mofe.go.kr/nw/nes/detailNesDtaView.do?searchBbsId=MOSFBBS_000000000028&menuNo=4010100&searchNttId=MOSF_000000000079942",
       "date": "2026-11-11",
       "summary": "",
       "tax": false

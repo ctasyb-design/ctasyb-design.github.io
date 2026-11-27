@@ -1,6 +1,6 @@
 {
  "updated": "2026-11-27",
- "note": "매일 3편씩 status=pending 인 주제를 번호 순서대로 작성하고 status를 done, id를 기록합니다.",
+ "note": "매일 3편씩 status=pending 인 주제를 번호 순서대로 작성하고 status를 done, id를 기록합니다. 135번 이후 주제는 참고 사이트에서 다룬 분야 가운데 빠진 것을 사무소 표현으로 다시 정한 것이며, 본문은 법령을 직접 확인해 새로 씁니다.",
  "items": [
   {
    "no": 21,
@@ -684,6 +684,408 @@
    "no": 134,
    "category": "양도소득세",
    "topic": "환산취득가액 가산세와 감정평가",
+   "status": "pending"
+  },
+  {
+   "no": 135,
+   "category": "양도소득세",
+   "topic": "1세대 1주택 보유기간은 언제부터 세나 — 다른 주택을 정리한 뒤의 기산일",
+   "status": "pending"
+  },
+  {
+   "no": 136,
+   "category": "증여세",
+   "topic": "부모 농지를 받아 농사짓는 자녀의 증여세 감면",
+   "status": "pending"
+  },
+  {
+   "no": 137,
+   "category": "상속세",
+   "topic": "상속인끼리 상속세를 대신 내 줄 때 — 연대납부 한도",
+   "status": "pending"
+  },
+  {
+   "no": 138,
+   "category": "종합소득세",
+   "topic": "가사 관련 비용과 초과인출금 이자 — 경비로 안 되는 항목",
+   "status": "pending"
+  },
+  {
+   "no": 139,
+   "category": "법인세",
+   "topic": "거래처 부도 때 대손금으로 비용 처리하는 요건",
+   "status": "pending"
+  },
+  {
+   "no": 140,
+   "category": "부가가치세",
+   "topic": "승용차 구입·유지비 매입세액 불공제와 예외 차종",
+   "status": "pending"
+  },
+  {
+   "no": 141,
+   "category": "세액공제·감면",
+   "topic": "중소기업 취업 청년·고령자의 소득세 감면",
+   "status": "pending"
+  },
+  {
+   "no": 142,
+   "category": "양도소득세",
+   "topic": "세대 분리 판단 — 같은 집에 사는 성인 자녀는 별도 세대일까",
+   "status": "pending"
+  },
+  {
+   "no": 143,
+   "category": "증여세",
+   "topic": "부모 소유 부동산을 무상으로 쓸 때의 증여 이익",
+   "status": "pending"
+  },
+  {
+   "no": 144,
+   "category": "상속세",
+   "topic": "10년 안에 다시 상속이 일어날 때의 단기 재상속 세액공제",
+   "status": "pending"
+  },
+  {
+   "no": 145,
+   "category": "종합소득세",
+   "topic": "기부금 세액공제율과 한도, 남은 공제의 이월",
+   "status": "pending"
+  },
+  {
+   "no": 146,
+   "category": "법인세",
+   "topic": "임원 상여금 — 지급 규정이 없으면 비용이 안 되는 이유",
+   "status": "pending"
+  },
+  {
+   "no": 147,
+   "category": "양도소득세",
+   "topic": "1년·2년 안에 팔 때 적용되는 단기 양도세율",
+   "status": "pending"
+  },
+  {
+   "no": 148,
+   "category": "증여세",
+   "topic": "증여받은 땅이 개발돼 값이 오르면 추가 과세되는 경우",
+   "status": "pending"
+  },
+  {
+   "no": 149,
+   "category": "상속세",
+   "topic": "상속재산을 공익법인에 출연하면 과세가액에서 제외되는 요건",
+   "status": "pending"
+  },
+  {
+   "no": 150,
+   "category": "종합소득세",
+   "topic": "연금저축·IRP 세액공제 한도와 연말 납입 전략",
+   "status": "pending"
+  },
+  {
+   "no": 151,
+   "category": "법인세",
+   "topic": "법인 기부금 한도와 이월공제",
+   "status": "pending"
+  },
+  {
+   "no": 152,
+   "category": "양도소득세",
+   "topic": "다가구주택을 1주택으로 보는 요건과 일부 매각의 함정",
+   "status": "pending"
+  },
+  {
+   "no": 153,
+   "category": "증여세",
+   "topic": "남의 이름으로 둔 주식·부동산 — 명의신탁 증여의제",
+   "status": "pending"
+  },
+  {
+   "no": 154,
+   "category": "상속세",
+   "topic": "손주에게 바로 상속될 때의 할증과 대습상속 예외",
+   "status": "pending"
+  },
+  {
+   "no": 155,
+   "category": "종합소득세",
+   "topic": "무주택 세대주 월세 세액공제 요건",
+   "status": "pending"
+  },
+  {
+   "no": 156,
+   "category": "법인세",
+   "topic": "부동산임대가 주업인 소규모 법인의 법인세",
+   "status": "pending"
+  },
+  {
+   "no": 157,
+   "category": "양도소득세",
+   "topic": "시골 농어촌주택·이농·귀농주택이 있을 때 도시 주택 비과세",
+   "status": "pending"
+  },
+  {
+   "no": 158,
+   "category": "증여세",
+   "topic": "부모가 자녀 빚을 갚아 주거나 면제해 줄 때",
+   "status": "pending"
+  },
+  {
+   "no": 159,
+   "category": "상속세",
+   "topic": "선산·묘지 등 제사용 재산 비과세 한도",
+   "status": "pending"
+  },
+  {
+   "no": 160,
+   "category": "종합소득세",
+   "topic": "의료비 세액공제 계산과 공제 대상 가족",
+   "status": "pending"
+  },
+  {
+   "no": 161,
+   "category": "법인세",
+   "topic": "법인이 주택·비사업용 토지를 팔 때 추가 법인세",
+   "status": "pending"
+  },
+  {
+   "no": 162,
+   "category": "양도소득세",
+   "topic": "토지와 건물을 한꺼번에 팔 때 가액 나누는 기준",
+   "status": "pending"
+  },
+  {
+   "no": 163,
+   "category": "증여세",
+   "topic": "장애인 자녀를 위한 신탁과 증여세 불산입",
+   "status": "pending"
+  },
+  {
+   "no": 164,
+   "category": "상속세",
+   "topic": "상속재산이 재해로 손실된 경우의 재해손실공제",
+   "status": "pending"
+  },
+  {
+   "no": 165,
+   "category": "종합소득세",
+   "topic": "혼인 세액공제 적용 기간과 요건",
+   "status": "pending"
+  },
+  {
+   "no": 166,
+   "category": "법인세",
+   "topic": "법인세 중간예납 — 직전 실적 기준과 가결산 중 선택",
+   "status": "pending"
+  },
+  {
+   "no": 167,
+   "category": "양도소득세",
+   "topic": "등기하지 않은 채 양도하면 생기는 불이익과 예외",
+   "status": "pending"
+  },
+  {
+   "no": 168,
+   "category": "증여세",
+   "topic": "해외에 사는 자녀에게 증여할 때 공제와 납세의무",
+   "status": "pending"
+  },
+  {
+   "no": 169,
+   "category": "상속세",
+   "topic": "고인이 선 보증채무를 상속세에서 빼는 기준",
+   "status": "pending"
+  },
+  {
+   "no": 170,
+   "category": "종합소득세",
+   "topic": "부동산 계약 해제로 받은 위약금·계약금의 기타소득",
+   "status": "pending"
+  },
+  {
+   "no": 171,
+   "category": "법인세",
+   "topic": "2026년 이후 사업연도 법인세율",
+   "status": "pending"
+  },
+  {
+   "no": 172,
+   "category": "양도소득세",
+   "topic": "해외로 이주·출국할 때 국내 주택 비과세 기한",
+   "status": "pending"
+  },
+  {
+   "no": 173,
+   "category": "증여세",
+   "topic": "배우자·자녀와의 매매가 증여로 추정되는 경우",
+   "status": "pending"
+  },
+  {
+   "no": 174,
+   "category": "상속세",
+   "topic": "상속 후 수용·경매로 값이 떨어졌을 때 경정청구 특례",
+   "status": "pending"
+  },
+  {
+   "no": 175,
+   "category": "종합소득세",
+   "topic": "가상자산 소득 과세 시행 일정과 준비",
+   "status": "pending"
+  },
+  {
+   "no": 176,
+   "category": "법인세",
+   "topic": "대표 사택 비용을 법인 비용으로 처리할 수 있는 범위",
+   "status": "pending"
+  },
+  {
+   "no": 177,
+   "category": "양도소득세",
+   "topic": "매수인이 잔금 전 건물을 허물거나 용도를 바꿀 때 비과세 판단",
+   "status": "pending"
+  },
+  {
+   "no": 178,
+   "category": "증여세",
+   "topic": "가족 법인 배당을 몰아 받을 때의 초과배당 증여",
+   "status": "pending"
+  },
+  {
+   "no": 179,
+   "category": "상속세",
+   "topic": "상속세 신고기한을 넘겼을 때 기한후신고와 가산세 감면",
+   "status": "pending"
+  },
+  {
+   "no": 180,
+   "category": "종합소득세",
+   "topic": "3만 원 넘는 지출의 적격증빙과 미수취 가산세",
+   "status": "pending"
+  },
+  {
+   "no": 181,
+   "category": "법인세",
+   "topic": "간이지급명세서 매월 제출 전환과 가산세",
+   "status": "pending"
+  },
+  {
+   "no": 182,
+   "category": "양도소득세",
+   "topic": "직장·학업·질병으로 2년을 못 채운 집의 거주요건 특례",
+   "status": "pending"
+  },
+  {
+   "no": 183,
+   "category": "증여세",
+   "topic": "증여세 부과제척기간 10년·15년의 기준",
+   "status": "pending"
+  },
+  {
+   "no": 184,
+   "category": "상속세",
+   "topic": "고인의 종합소득세 준확정신고",
+   "status": "pending"
+  },
+  {
+   "no": 185,
+   "category": "양도소득세",
+   "topic": "단독주택 마당 땅도 비과세될까 — 주택부수토지 면적 한도",
+   "status": "pending"
+  },
+  {
+   "no": 186,
+   "category": "증여세",
+   "topic": "공익법인에 재산을 출연할 때 증여세와 주식 보유 한도",
+   "status": "pending"
+  },
+  {
+   "no": 187,
+   "category": "상속세",
+   "topic": "임대 중인 건물을 상속·증여할 때 임대료 환산가액 평가",
+   "status": "pending"
+  },
+  {
+   "no": 188,
+   "category": "양도소득세",
+   "topic": "토지 수용 때 대토보상을 받으면 감면과 과세이연 중 선택",
+   "status": "pending"
+  },
+  {
+   "no": 189,
+   "category": "증여세",
+   "topic": "유상증자 실권주를 자녀가 배정받을 때 증여",
+   "status": "pending"
+  },
+  {
+   "no": 190,
+   "category": "상속세",
+   "topic": "비거주자가 사망한 경우의 상속세",
+   "status": "pending"
+  },
+  {
+   "no": 191,
+   "category": "양도소득세",
+   "topic": "농지를 팔고 새 농지로 옮길 때 농지대토 감면",
+   "status": "pending"
+  },
+  {
+   "no": 192,
+   "category": "증여세",
+   "topic": "상장주식·가상자산을 증여할 때 평가 방법",
+   "status": "pending"
+  },
+  {
+   "no": 193,
+   "category": "양도소득세",
+   "topic": "논밭 교환·분합의 양도세 비과세 요건",
+   "status": "pending"
+  },
+  {
+   "no": 194,
+   "category": "증여세",
+   "topic": "이혼 재산분할과 위자료 대물변제의 세금 차이",
+   "status": "pending"
+  },
+  {
+   "no": 195,
+   "category": "양도소득세",
+   "topic": "직접 지은 건물의 취득시기와 장기보유특별공제 기산",
+   "status": "pending"
+  },
+  {
+   "no": 196,
+   "category": "양도소득세",
+   "topic": "계약서 금액을 실제와 다르게 쓰면 비과세·감면이 제한되는 이유",
+   "status": "pending"
+  },
+  {
+   "no": 197,
+   "category": "양도소득세",
+   "topic": "해외주식을 배우자에게 증여한 뒤 파는 경우의 이월과세",
+   "status": "pending"
+  },
+  {
+   "no": 198,
+   "category": "양도소득세",
+   "topic": "골프·콘도 회원권 양도 시 세금",
+   "status": "pending"
+  },
+  {
+   "no": 199,
+   "category": "양도소득세",
+   "topic": "경매로 넘어간 부동산도 양도세 신고 대상인가",
+   "status": "pending"
+  },
+  {
+   "no": 200,
+   "category": "양도소득세",
+   "topic": "땅을 맞바꾸는 교환 거래의 양도가액 계산",
+   "status": "pending"
+  },
+  {
+   "no": 201,
+   "category": "양도소득세",
+   "topic": "부동산 매매업자와 양도세 비교과세",
    "status": "pending"
   }
  ]

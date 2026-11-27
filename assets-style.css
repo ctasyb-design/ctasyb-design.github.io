@@ -343,3 +343,4 @@ footer .disc{margin-top:18px;border-top:1px solid rgba(255,255,255,.1);padding-t
   .mbar a.t{background:var(--indigo);color:#fff}
   body{padding-bottom:64px}
 }
+.post-body p.rights{font-size:13px;color:#6b7280;border-top:1px solid #e5e7eb;margin-top:28px;padding-top:14px;line-height:1.7}.post-body p.rights a{color:inherit;text-decoration:underline}

@@ -345,4 +345,5 @@ footer .disc{margin-top:18px;border-top:1px solid rgba(255,255,255,.1);padding-t
 }
 .post-body p.rights{font-size:13px;color:#6b7280;border-top:1px solid #e5e7eb;margin-top:28px;padding-top:14px;line-height:1.7}.post-body p.rights a{color:inherit;text-decoration:underline}
 a.gtile small.gcols{display:inline-block;margin-top:6px;font-size:12px;font-weight:600;color:var(--indigo);background:#eef1fa;border-radius:999px;padding:2px 9px}
+.col-group{margin-top:30px}.col-group:first-child{margin-top:0}.col-group h3.gh{display:flex;align-items:center;gap:10px;margin:0 0 12px;font-size:20px;color:var(--indigo);padding-left:12px;border-left:4px solid var(--foil)}.col-group h3.gh small{font-size:14px;font-weight:600;color:var(--sub)}
 .filters .flabel{font-size:14px;font-weight:700;color:var(--indigo);margin-right:4px}

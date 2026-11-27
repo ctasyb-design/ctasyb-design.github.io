@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>신영범세무회계사무소 | 부산·경남 세무사 · 세무 블로그</title>
-<meta name="description" content="부산·경남 신영범세무회계사무소 — 법인세·부가가치세·종합소득세·양도·상속·증여 전문. 최신 세법 개정 소식과 절세 가이드를 매주 업데이트합니다.">
+<meta name="description" content="부산·경남 신영범세무회계사무소 — 법인세·부가가치세·종합소득세·양도·상속·증여 전문. 최신 입법동향과 절세 가이드를 매주 업데이트합니다.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -355,9 +355,10 @@ footer .disc{margin-top:18px;border-top:1px solid rgba(255,255,255,.1);padding-t
 }
 .post-body p.rights{font-size:13px;color:#6b7280;border-top:1px solid #e5e7eb;margin-top:28px;padding-top:14px;line-height:1.7}.post-body p.rights a{color:inherit;text-decoration:underline}
 a.gtile small.gcols{display:inline-block;margin-top:6px;font-size:12px;font-weight:600;color:var(--indigo);background:#eef1fa;border-radius:999px;padding:2px 9px}
+.col-group{margin-top:30px}.col-group:first-child{margin-top:0}.col-group h3.gh{display:flex;align-items:center;gap:10px;margin:0 0 12px;font-size:20px;color:var(--indigo);padding-left:12px;border-left:4px solid var(--foil)}.col-group h3.gh small{font-size:14px;font-weight:600;color:var(--sub)}
 .filters .flabel{font-size:14px;font-weight:700;color:var(--indigo);margin-right:4px}
 </style>
-<link rel="canonical" href="https://ctasyb-design.github.io/"><meta property="og:type" content="website"><meta property="og:title" content="신영범세무회계사무소 | 부산·경남 세무사"><meta property="og:description" content="법인세·부가가치세·종합소득세·양도·상속·증여 상담. 최신 세법 개정 소식 매주 업데이트."><meta property="og:url" content="https://ctasyb-design.github.io/">
+<link rel="canonical" href="https://ctasyb-design.github.io/"><meta property="og:type" content="website"><meta property="og:title" content="신영범세무회계사무소 | 부산·경남 세무사"><meta property="og:description" content="법인세·부가가치세·종합소득세·양도·상속·증여 상담. 최신 입법동향 매주 업데이트."><meta property="og:url" content="https://ctasyb-design.github.io/">
 </head>
 <body>
 <header class="top">
@@ -369,9 +370,9 @@ a.gtile small.gcols{display:inline-block;margin-top:6px;font-size:12px;font-weig
       <a href="#about" data-v="about">사무소 소개</a>
       <a href="#services" data-v="services">업무분야</a>
       <a href="#guide" data-v="guide">세목별 안내</a>
-      <a href="#laws" data-v="laws">세법 개정 소식</a>
+      <a href="#laws" data-v="laws">최신 입법동향</a>
       <a href="#blog" data-v="blog">세무 블로그</a>
-      <a href="#cards" data-v="cards">카드뉴스</a>
+      <a href="#press" data-v="press">재정경제부 보도자료</a>
       <a href="#columns" data-v="columns">세무 칼럼</a>
       <a href="#" class="kakao-nav" id="navKakao" data-kakao><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#191919" d="M12 3.5C6.75 3.5 2.5 6.86 2.5 11c0 2.62 1.7 4.92 4.28 6.26l-.9 3.3c-.08.3.26.54.52.37l3.94-2.6c.53.07 1.08.11 1.66.11 5.25 0 9.5-3.36 9.5-7.5S17.25 3.5 12 3.5z"/></svg>카카오톡 상담</a>
       <a href="#contact" data-v="contact" class="call">상담 신청</a>
@@ -532,6 +533,17 @@ function colList(){
   const q = (S.colQ||"").trim().toLowerCase(), c = S.colCat||"전체";
   return ((S.cols&&S.cols.items)||[]).filter(x => (c==="전체"||x.category===c) && (!q || [x.title,x.summary,(x.keywords||[]).join(" "),x.category].join(" ").toLowerCase().includes(q)));
 }
+/* 홈페이지 공통 분류: 세무 칼럼·세무 블로그·네이버 블로그가 같은 이름과 순서를 씁니다 */
+const COL_ORDER = ["양도소득세","상속·증여세","종합소득세","법인세","부가가치세","세액공제·감면","연말정산·급여","세법개정"];
+const colRank = c => { const i = COL_ORDER.indexOf(c); return i < 0 ? 99 : i; };
+/* 전체 보기(검색어 없음)일 때는 분야별 제목 아래에 나눠 보여 주고, 분야 선택·검색 시에는 한 목록으로 보여 줍니다 */
+function colListHtml(){
+  const list = colList(), q = (S.colQ||"").trim(), c = S.colCat||"전체";
+  if(!list.length) return '<div class="empty">찾는 칼럼이 없습니다.</div>';
+  if(c!=="전체" || q) return `<div class="col-list">${list.map(colRow).join("")}</div>`;
+  const g = {}; list.forEach(x => (g[x.category] = g[x.category] || []).push(x));
+  return Object.keys(g).sort((a,b)=>colRank(a)-colRank(b)).map(k => `<div class="col-group"><h3 class="gh">${esc(k)} <small class="num">${g[k].length}편</small></h3><div class="col-list">${g[k].slice().sort((a,b)=>a.no-b.no).map(colRow).join("")}</div></div>`).join("");
+}
 function colRow(x){ return `<a href="#column-${esc(x.id)}"><span class="no num">${x.no}</span><div><h3><span class="tag">${esc(x.category)}</span>${esc(x.title)}</h3><p>${esc(x.summary)}</p></div></a>`; }
 function blogList(){
   const q = (S.blogQ||"").trim().toLowerCase();
@@ -543,12 +555,12 @@ function ctaBox(){
   return `<div class="cta"><img src="${LOGO_LIGHT}" alt=""><div class="in"><h3>이 내용, 우리 회사·우리 집에는 어떻게 적용될까요?</h3>
     <p>같은 조문이라도 보유기간·거주기간·업종·결산 구조에 따라 세금이 달라집니다. 계산해서 결론부터 말씀드립니다.</p>
     <div class="lines num"><span>전화 <b>${esc(o.phone)}</b></span>${o.mobile?`<span>휴대전화 <b>${esc(o.mobile)}</b></span>`:""}<span>${esc(o.email)}</span></div>
-    <div class="btns"><a class="btn foil" href="#contact">상담 신청</a>${kakaoBtn()}<a class="btn outline-light" href="#laws">세법 개정 소식 보기</a></div></div></div><div class="band"><i></i><i></i></div>`;
+    <div class="btns"><a class="btn foil" href="#contact">상담 신청</a>${kakaoBtn()}<a class="btn outline-light" href="#laws">최신 입법동향 보기</a></div></div></div><div class="band"><i></i><i></i></div>`;
 }
 
 const gTitle = n => /안내$/.test(n) ? n : n + " 안내";
 /* 세목별 안내 ↔ 세무 칼럼 연결: 칼럼의 분야(category)가 안내의 세목 이름과 같으면 그 세목에 붙습니다 */
-const colsFor = g => (((S.cols&&S.cols.items)||[]).filter(c => c.category === g.name)).sort((a,b)=>b.no-a.no);
+const colsFor = g => (((S.cols&&S.cols.items)||[]).filter(c => (c.tax || c.category) === g.name)).sort((a,b)=>b.no-a.no);
 function gTile(g, cur){
   const n = colsFor(g).length;
   return `<a class="gtile ${cur===g.id?"cur":""}" href="#guide-${esc(g.id)}"><span class="ic">${esc(g.icon)}</span><span><b>${esc(g.name)}${g.calc?'<em>모의계산</em>':""}</b><span>${esc(g.short)}</span>${n?`<small class="gcols">세무 칼럼 ${n}편</small>`:""}</span></a>`;
@@ -645,7 +657,7 @@ const VIEWS = {
     </div></section>
 
     <section class="block"><div class="wrap">
-      <div class="sec-head"><div><h2>최신 세법 개정 소식</h2><p>시행·시행예정·국회심사·정부안 단계를 구분해 매주 갱신합니다.</p></div>
+      <div class="sec-head"><div><h2>최신 입법동향</h2><p>시행·시행예정·국회심사·정부안 단계를 구분해 매주 갱신합니다.</p></div>
       <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><span class="updated num">${fmt(S.laws.updated)} 확인</span><a class="btn outline" href="https://ctasyb-design.github.io/files/tax-law-update.pptx" target="_blank" rel="noopener">PPT 자료 받기</a></div></div>
       <div class="laws">${S.laws.items.slice(0,4).map(lawItem).join("")}</div>
       <p style="margin-top:18px;display:flex;gap:18px;flex-wrap:wrap;align-items:center"><a class="more" href="#laws">개정사항 ${S.laws.items.length}건 전체 보기</a><a class="more" href="https://ctasyb-design.github.io/files/tax-law-update.pptx" target="_blank" rel="noopener">PPT 자료 받기 (${fmt(S.laws.updated)} 기준)</a></p>
@@ -659,9 +671,9 @@ const VIEWS = {
       <div><div class="sec-head"><div><h2>다가오는 신고 일정</h2><p>기한이 휴일이면 다음 영업일 기준</p></div></div>${calList(5)}</div>
     </div></section>
 
-    ${cardItems().length?`<section class="block" style="padding-top:0"><div class="wrap">
-      <div class="sec-head"><div><h2>카드뉴스</h2><p>바뀐 세법의 핵심을 카드 한 장으로 정리했습니다. 누르면 해설 글로 이동합니다.</p></div><a class="more" href="#cards">카드뉴스 전체 보기</a></div>
-      <div class="cardnews">${cardItems().slice(0,4).map(cardTile).join("")}</div>
+    ${S.moef?`<section class="block" style="padding-top:0"><div class="wrap">
+      <div class="sec-head"><div><h2>재정경제부 보도자료</h2><p>세법·세무 관련 보도자료를 골라 매일 확인합니다. 제목을 누르면 원문이 열립니다.</p></div><a class="more" href="#press">보도자료 전체 보기</a></div>
+      <div class="press">${pressRows(pressList("세제",5)) || '<div class="empty">최근 세법·세무 관련 보도자료가 없습니다.</div>'}</div>
     </div></section>`:""}
 
     ${S.cols&&S.cols.items.length?`<section class="block" style="padding-top:0"><div class="wrap">
@@ -738,7 +750,7 @@ const VIEWS = {
     const cats = ["전체", ...new Set(S.laws.items.map(l=>l.category))];
     const sts = ["전체상태", ...Object.keys(S.laws.statusGuide)];
     return `<section class="block"><div class="wrap">
-      <div class="sec-head"><div><h2>세법 개정 소식</h2><p>매주 월요일 정부 발표·국회 심사·시행령 개정 내용을 확인해 갱신합니다.</p></div><div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><span class="updated num">${fmt(S.laws.updated)} 확인</span><a class="btn outline" href="https://ctasyb-design.github.io/files/tax-law-update.pptx" target="_blank" rel="noopener">PPT 자료 받기</a></div></div>
+      <div class="sec-head"><div><h2>최신 입법동향</h2><p>매주 월요일 정부 발표·국회 심사·시행령 개정 내용을 확인해 갱신합니다.</p></div><div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><span class="updated num">${fmt(S.laws.updated)} 확인</span><a class="btn outline" href="https://ctasyb-design.github.io/files/tax-law-update.pptx" target="_blank" rel="noopener">PPT 자료 받기</a></div></div>
       <div class="filters">${cats.map(c=>`<button class="chip ${S.lawFilter===c?"on":""}" data-cat="${esc(c)}">${esc(c)}</button>`).join("")}</div>
       <div class="filters"><select class="search" id="lawSt" style="flex:0 0 160px" aria-label="진행 단계">${sts.map(s=>`<option ${S.lawSt===s?"selected":""}>${esc(s)}</option>`).join("")}</select>
         <input class="search" id="lawQ" aria-label="키워드 검색" placeholder="키워드 검색 (예: 종부세, 법인세율, 연말정산)" value="${esc(S.lawQ)}"></div>
@@ -747,30 +759,25 @@ const VIEWS = {
       ${ctaBox()}</div></section>`;
   },
   blog(){
-    const cats = ["전체", ...new Set(S.posts.items.map(p=>p.category))];
+    const cats = ["전체", ...[...new Set(S.posts.items.map(p=>p.category))].sort((a,b)=>colRank(a)-colRank(b))];
     const list = blogList();
     return `<section class="block"><div class="wrap" style="max-width:900px">
       <div class="sec-head"><div><h2>세무 블로그</h2><p>바뀐 세법을 내 상황에 맞게 해석해 드리는 실무 가이드입니다.</p></div></div>
       <div class="filters">${cats.map(c=>`<button class="chip ${S.blogFilter===c?"on":""}" data-bcat="${esc(c)}">${esc(c)}</button>`).join("")}</div>
       <div class="filters"><input class="search" id="blogQ" aria-label="블로그 글 검색" placeholder="글 검색 (예: 중간예납, 증여, 법인세율)" value="${esc(S.blogQ||"")}"></div>
       <div class="posts" id="postList">${list.map(postRow).join("") || '<div class="empty">찾는 글이 없습니다.</div>'}</div>${naverBox(6)}
-      <div class="sec-head" style="margin-top:56px"><div><h2 style="font-size:24px">재정경제부 보도자료</h2><p>옛 기획재정부. 세법·세무 관련 보도자료만 골라 매일 업데이트합니다. 제목을 누르면 원문이 열립니다.</p></div>${S.moef?`<span class="updated num">${fmt(S.moef.updated)} 확인</span>`:""}</div>
-      <div class="press">${S.moef ? (pressRows(pressList("세제",10)) || '<div class="empty">최근 세법·세무 관련 보도자료가 없습니다.</div>') : '<div class="empty">보도자료 목록을 준비하고 있습니다.</div>'}</div>
-      <p style="margin-top:14px"><a class="more" href="https://www.mofe.go.kr" target="_blank" rel="noopener">재정경제부 누리집에서 전체 보기</a></p>
     </div></section>`;
   },
   columns(){
     const items = (S.cols&&S.cols.items)||[];
-    const ORDER = ["양도소득세","증여세","상속세","종합소득세","법인세","부가가치세","세액공제·감면","재산세·종합부동산세"];
     const cnt = {}; items.forEach(x => cnt[x.category] = (cnt[x.category]||0) + 1);
-    const cats = ["전체", ...Object.keys(cnt).sort((a,b)=>{ const r = c => { const i = ORDER.indexOf(c); return i < 0 ? 99 : i; }; return r(a) - r(b); })];
+    const cats = ["전체", ...Object.keys(cnt).sort((a,b)=>colRank(a)-colRank(b))];
     cnt["전체"] = items.length;
-    const list = colList();
     return `<section class="block"><div class="wrap" style="max-width:900px">
       <div class="sec-head"><div><h2>세무 칼럼</h2><p>양도·증여·상속·종합소득세·법인세 실무 쟁점을 법령 근거와 숫자로 정리합니다. 매일 새 칼럼이 추가됩니다.</p></div>${S.cols?`<span class="updated num">총 ${items.length}편 · ${fmt(S.cols.updated)} 갱신</span>`:""}</div>
       <div class="filters" role="group" aria-label="구분"><span class="flabel">구분</span>${cats.map(c=>`<button class="chip ${(S.colCat||"전체")===c?"on":""}" data-ccat="${esc(c)}">${esc(c)}(${cnt[c]})</button>`).join("")}</div>
       <div class="filters"><input class="search" id="colQ" aria-label="칼럼 검색" placeholder="칼럼 검색 (예: 일시적 2주택, 부담부증여, 가지급금)" value="${esc(S.colQ||"")}"></div>
-      <div class="col-list" id="colList">${list.map(colRow).join("") || '<div class="empty">찾는 칼럼이 없습니다.</div>'}</div>
+      <div id="colList">${colListHtml()}</div>
       ${ctaBox()}</div></section>`;
   },
   columnDetail(id){
@@ -790,11 +797,14 @@ const VIEWS = {
       ${others.length?`<div class="sec-head" style="margin-top:48px"><div><h2 style="font-size:22px">같은 분야 칼럼</h2></div></div><div class="col-list">${others.map(colRow).join("")}</div>`:""}
     </div></div></section>`;
   },
-  cards(){
-    const list = cardItems();
-    return `<section class="block"><div class="wrap">
-      <div class="sec-head"><div><h2>카드뉴스</h2><p>바뀐 세법의 핵심을 카드 한 장으로 정리했습니다. 누르면 해설 글로 이동합니다.</p></div></div>
-      <div class="cardnews">${list.map(cardTile).join("") || '<div class="empty">카드뉴스를 준비하고 있습니다.</div>'}</div>
+  press(){
+    const all = (S.moef && S.moef.items) || [], f = S.pressFilter || "세제";
+    const n = {"세제": all.filter(i=>i.tax).length, "전체": all.length};
+    return `<section class="block"><div class="wrap" style="max-width:900px">
+      <div class="sec-head"><div><h2>재정경제부 보도자료</h2><p>옛 기획재정부. 세법·세무 관련 보도자료를 골라 매일 확인합니다. 제목을 누르면 원문이 열립니다.</p></div>${S.moef?`<span class="updated num">${fmt(S.moef.updated)} 확인</span>`:""}</div>
+      <div class="filters" role="group" aria-label="구분"><span class="flabel">구분</span>${[["세제","세법·세무"],["전체","전체 보도자료"]].map(([k,l])=>`<button class="chip ${f===k?"on":""}" data-pf="${k}">${l}(${n[k]})</button>`).join("")}</div>
+      <div class="press">${S.moef ? (pressRows(pressList(f)) || '<div class="empty">최근 세법·세무 관련 보도자료가 없습니다.</div>') : '<div class="empty">보도자료 목록을 준비하고 있습니다.</div>'}</div>
+      <p style="margin-top:14px"><a class="more" href="https://www.mofe.go.kr" target="_blank" rel="noopener">재정경제부 누리집에서 전체 보기</a></p>
       ${ctaBox()}</div></section>`;
   },
   contact(){
@@ -869,7 +879,7 @@ function route(){
   if(h.startsWith("post-")){ v = "post"; arg = h.slice(5); }
   if(h.startsWith("guide-")){ v = "guideDetail"; arg = h.slice(6); }
   if(h.startsWith("column-")){ v = "columnDetail"; arg = h.slice(7); }
-  if(v==="press") v = "blog";
+  if(v==="cards") v = "press"; /* 예전 카드뉴스 주소는 보도자료로 연결 */
   if(!VIEWS[v]) v = "home";
   $("#app").innerHTML = VIEWS[v](arg);
   document.querySelectorAll("nav.main a").forEach(a => a.classList.toggle("on", a.dataset.v === (v==="post"?"blog":v==="guideDetail"?"guide":v==="columnDetail"?"columns":v) && !a.classList.contains("call")));
@@ -902,9 +912,12 @@ function bind(v, arg){
     $("#lawQ").oninput = e => { S.lawQ = e.target.value; renderLawList(); };
     $("#lawSt").onchange = e => { S.lawSt = e.target.value; renderLawList(); };
   }
+  if(v==="press"){
+    document.querySelectorAll("[data-pf]").forEach(b => b.onclick = () => { S.pressFilter = b.dataset.pf; $("#app").innerHTML = VIEWS.press(); bind("press"); });
+  }
   if(v==="columns"){
     document.querySelectorAll("[data-ccat]").forEach(b => b.onclick = () => { S.colCat = b.dataset.ccat; $("#app").innerHTML = VIEWS.columns(); bind("columns"); });
-    $("#colQ").oninput = e => { S.colQ = e.target.value; $("#colList").innerHTML = colList().map(colRow).join("") || '<div class="empty">찾는 칼럼이 없습니다.</div>'; };
+    $("#colQ").oninput = e => { S.colQ = e.target.value; $("#colList").innerHTML = colListHtml(); };
   }
   if(v==="blog"){
     document.querySelectorAll("[data-bcat]").forEach(b => b.onclick = () => { S.blogFilter = b.dataset.bcat; $("#app").innerHTML = VIEWS.blog(); bind("blog"); });
@@ -953,7 +966,7 @@ function renderFooter(){
   const o = S.office;
   $("#footer").innerHTML = `<div style="display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap">
     <div class="num"><div class="brandf"><img src="${LOGO_LIGHT}" alt=""><b style="font-size:17px">${esc(o.name)}</b></div>${esc(o.ceo)}<br>${esc(o.address)}<br>전화 ${esc(o.phone)}${o.mobile?` · 휴대전화 ${esc(o.mobile)}`:""} · 팩스 ${esc(o.fax)} · ${esc(o.email)}<br>${esc(o.hours)}</div>
-    <div class="num">세법 개정 소식 최종 확인: <b>${fmt(S.laws.updated)}</b><br>블로그 최신 글: ${fmt(S.posts.items[0].date)}${o.naverBlog?`<br>네이버 블로그: <a href="${esc(o.naverBlog)}" target="_blank" rel="noopener" style="color:#e6cd93">blog.naver.com/ctasyb</a>`:""}${o.cardUrl?`<br>디지털 명함: <a href="${esc(o.cardUrl)}" target="_blank" rel="noopener" style="color:#e6cd93">명함 보기</a>${o.vcfUrl?` · <a href="${esc(o.vcfUrl)}" target="_blank" rel="noopener" style="color:#e6cd93">연락처 저장</a>`:""}`:""}</div></div>
+    <div class="num">최신 입법동향 최종 확인: <b>${fmt(S.laws.updated)}</b><br>블로그 최신 글: ${fmt(S.posts.items[0].date)}${o.naverBlog?`<br>네이버 블로그: <a href="${esc(o.naverBlog)}" target="_blank" rel="noopener" style="color:#e6cd93">blog.naver.com/ctasyb</a>`:""}${o.cardUrl?`<br>디지털 명함: <a href="${esc(o.cardUrl)}" target="_blank" rel="noopener" style="color:#e6cd93">명함 보기</a>${o.vcfUrl?` · <a href="${esc(o.vcfUrl)}" target="_blank" rel="noopener" style="color:#e6cd93">연락처 저장</a>`:""}`:""}</div></div>
     <div class="disc">본 홈페이지의 세법 정보는 일반적인 안내를 위한 것으로, 개별 사안에 대한 세무 자문을 대신하지 않습니다. ‘정부안’·‘국회심사’ 단계의 내용은 입법 과정에서 변경될 수 있으며, 실제 적용 전 반드시 세무사와 상담하시기 바랍니다.<br>© ${new Date().getFullYear()} ${esc(o.name)}. 이 홈페이지의 글·카드 이미지는 사무소가 직접 작성·제작한 것으로, 무단 복제·배포를 금합니다. 상담 신청 내용은 서버에 저장하지 않으며, 주민등록번호·계좌번호·홈택스 비밀번호는 보내지 마십시오.</div>`;
 }
 

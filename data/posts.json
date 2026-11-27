@@ -57,7 +57,7 @@
   {
    "id": "fake-33-labor-inspection-2026",
    "date": "2026-11-13",
-   "category": "노동·4대보험",
+   "category": "연말정산·급여",
    "target": "사업소득(3.3%) 인력을 쓰는 사업주",
    "press": {
     "ministry": "고용노동부",
@@ -110,7 +110,7 @@
   {
    "id": "one-house-residence-basis",
    "date": "2026-11-10",
-   "category": "양도·종부세",
+   "category": "양도소득세",
    "target": "1주택자·다주택자",
    "title": "1주택자 종부세·양도세 2026 총정리 — 거주 안 하면 세금 늘까? 실거주 공제 14억, 수정 정부안 비교",
    "keywords": [
@@ -156,7 +156,7 @@
   {
    "id": "yearend-settlement-2026",
    "date": "2026-11-06",
-   "category": "연말정산",
+   "category": "연말정산·급여",
    "target": "직장인·급여담당자",
    "title": "2026 연말정산 총정리 — 아이 학원비도 공제될까? 예체능 학원비·카드공제 한도 늘어난 4가지",
    "keywords": [
@@ -202,7 +202,7 @@
   {
    "id": "integrated-employment-credit-2026",
    "date": "2026-11-02",
-   "category": "세액공제",
+   "category": "세액공제·감면",
    "target": "중소·중견기업 대표",
    "title": "통합고용세액공제 2026 총정리 — 직원 줄면 추징될까? 지방 중소기업 청년 1명 3년 최대 4,900만원",
    "keywords": [

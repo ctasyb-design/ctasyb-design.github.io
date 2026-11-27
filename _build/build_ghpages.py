@@ -100,7 +100,7 @@ urls.append(('blog/', '0.9'))
 _cp = os.path.join(SRC, 'data', 'columns.json')
 _allcols = sorted(json.load(open(_cp))['items'], key=lambda c: c['no'], reverse=True) if os.path.exists(_cp) else []
 def gcols(g):
-    cs = [c for c in _allcols if c['category'] == g['name']]
+    cs = [c for c in _allcols if c.get('tax', c['category']) == g['name']]  # 상속·증여세 칼럼은 원래 세목(tax)으로 안내 페이지에 연결
     if not cs: return ''
     items = ''.join(f'<a href="/column/{c["id"]}.html"><span class="no num">{c["no"]}</span><div><h3>{e(c["title"])}</h3><p>{e(c["summary"])}</p></div></a>' for c in cs)
     return f'<h2 style="font-size:22px;margin-top:40px">{e(g["name"])} 세무 칼럼 ({len(cs)}편)</h2><div class="col-list">{items}</div>'
@@ -129,7 +129,7 @@ if cols:
                 + (f'<h2 style="font-size:22px;margin-top:40px">같은 분야 칼럼</h2><div class="col-list">{rel}</div>' if rel else ''))
         open(f'{OUT}/column/{c["id"]}.html', 'w').write(page(f'{c["title"]} | {office["name"]}', c['summary'], f'column/{c["id"]}.html', body))
         urls.append((f'column/{c["id"]}.html', '0.7'))
-    ORDER = ['양도소득세','증여세','상속세','종합소득세','법인세','부가가치세','세액공제·감면','재산세·종합부동산세']
+    ORDER = ['양도소득세','상속·증여세','종합소득세','법인세','부가가치세','세액공제·감면','연말정산·급여','세법개정']  # 홈페이지·네이버 블로그 공통 분류
     cats = sorted({c['category'] for c in cols}, key=lambda k: ORDER.index(k) if k in ORDER else 99)
     row = lambda c: f'<a href="/column/{c["id"]}.html"><span class="no num">{c["no"]}</span><div><h3><span class="tag">{e(c["category"])}</span>{e(c["title"])}</h3><p>{e(c["summary"])}</p></div></a>'
     chips = '<div class="filters"><span class="flabel">구분</span>' + f'<a class="chip on" href="#all">전체({len(cols)})</a>' + ''.join(f'<a class="chip" href="#cat-{i}">{e(k)}({sum(1 for c in cols if c["category"]==k)})</a>' for i, k in enumerate(cats)) + '</div>'
@@ -140,7 +140,7 @@ for p in EXTRA: urls.append((p, '0.6'))
 # index: SEO meta + crawlable link list
 links = ('<nav class="sitelinks" aria-label="전체 글 목록" style="max-width:1120px;margin:0 auto;padding:18px 24px 26px;font-size:14px;color:#5b6475">'
          f'전체 글 목록: <a href="/blog/">세무 블로그 {len(posts)}편</a> · <a href="/column/">세무 칼럼 {len(cols)}편</a> · <a href="/guide/">세목별 안내 {len(guides["items"])}개</a> · <a href="/sitemap.xml">사이트맵</a></nav>')
-seo = f'<link rel="canonical" href="{BASE}/"><meta property="og:type" content="website"><meta property="og:title" content="{e(office["name"])} | 부산·경남 세무사"><meta property="og:description" content="법인세·부가가치세·종합소득세·양도·상속·증여 상담. 최신 세법 개정 소식 매주 업데이트."><meta property="og:url" content="{BASE}/">'
+seo = f'<link rel="canonical" href="{BASE}/"><meta property="og:type" content="website"><meta property="og:title" content="{e(office["name"])} | 부산·경남 세무사"><meta property="og:description" content="법인세·부가가치세·종합소득세·양도·상속·증여 상담. 최신 입법동향 매주 업데이트."><meta property="og:url" content="{BASE}/">'
 out_idx = idx.replace('<head>', '<head>' + SEC_META(CSP_INDEX), 1).replace('</head>', seo + '\n</head>', 1)
 cut = out_idx.rfind('</body>')
 out_idx = out_idx[:cut] + links + '\n' + out_idx[cut:] if cut >= 0 else out_idx + links

@@ -355,6 +355,7 @@ footer .disc{margin-top:18px;border-top:1px solid rgba(255,255,255,.1);padding-t
 }
 .post-body p.rights{font-size:13px;color:#6b7280;border-top:1px solid #e5e7eb;margin-top:28px;padding-top:14px;line-height:1.7}.post-body p.rights a{color:inherit;text-decoration:underline}
 a.gtile small.gcols{display:inline-block;margin-top:6px;font-size:12px;font-weight:600;color:var(--indigo);background:#eef1fa;border-radius:999px;padding:2px 9px}
+.filters .flabel{font-size:14px;font-weight:700;color:var(--indigo);margin-right:4px}
 </style>
 <link rel="canonical" href="https://ctasyb-design.github.io/"><meta property="og:type" content="website"><meta property="og:title" content="신영범세무회계사무소 | 부산·경남 세무사"><meta property="og:description" content="법인세·부가가치세·종합소득세·양도·상속·증여 상담. 최신 세법 개정 소식 매주 업데이트."><meta property="og:url" content="https://ctasyb-design.github.io/">
 </head>
@@ -760,11 +761,14 @@ const VIEWS = {
   },
   columns(){
     const items = (S.cols&&S.cols.items)||[];
-    const cats = ["전체", ...new Set(items.map(x=>x.category))];
+    const ORDER = ["양도소득세","증여세","상속세","종합소득세","법인세","부가가치세","세액공제·감면","재산세·종합부동산세"];
+    const cnt = {}; items.forEach(x => cnt[x.category] = (cnt[x.category]||0) + 1);
+    const cats = ["전체", ...Object.keys(cnt).sort((a,b)=>{ const r = c => { const i = ORDER.indexOf(c); return i < 0 ? 99 : i; }; return r(a) - r(b); })];
+    cnt["전체"] = items.length;
     const list = colList();
     return `<section class="block"><div class="wrap" style="max-width:900px">
       <div class="sec-head"><div><h2>세무 칼럼</h2><p>양도·증여·상속·종합소득세·법인세 실무 쟁점을 법령 근거와 숫자로 정리합니다. 매일 새 칼럼이 추가됩니다.</p></div>${S.cols?`<span class="updated num">총 ${items.length}편 · ${fmt(S.cols.updated)} 갱신</span>`:""}</div>
-      <div class="filters">${cats.map(c=>`<button class="chip ${(S.colCat||"전체")===c?"on":""}" data-ccat="${esc(c)}">${esc(c)}</button>`).join("")}</div>
+      <div class="filters" role="group" aria-label="구분"><span class="flabel">구분</span>${cats.map(c=>`<button class="chip ${(S.colCat||"전체")===c?"on":""}" data-ccat="${esc(c)}">${esc(c)}(${cnt[c]})</button>`).join("")}</div>
       <div class="filters"><input class="search" id="colQ" aria-label="칼럼 검색" placeholder="칼럼 검색 (예: 일시적 2주택, 부담부증여, 가지급금)" value="${esc(S.colQ||"")}"></div>
       <div class="col-list" id="colList">${list.map(colRow).join("") || '<div class="empty">찾는 칼럼이 없습니다.</div>'}</div>
       ${ctaBox()}</div></section>`;

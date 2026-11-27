@@ -129,8 +129,12 @@ if cols:
                 + (f'<h2 style="font-size:22px;margin-top:40px">같은 분야 칼럼</h2><div class="col-list">{rel}</div>' if rel else ''))
         open(f'{OUT}/column/{c["id"]}.html', 'w').write(page(f'{c["title"]} | {office["name"]}', c['summary'], f'column/{c["id"]}.html', body))
         urls.append((f'column/{c["id"]}.html', '0.7'))
-    lst = ''.join(f'<a href="/column/{c["id"]}.html"><span class="no num">{c["no"]}</span><div><h3><span class="tag">{e(c["category"])}</span>{e(c["title"])}</h3><p>{e(c["summary"])}</p></div></a>' for c in cols)
-    open(f'{OUT}/column/index.html', 'w').write(page(f'세무 칼럼 | {office["name"]}', '양도·증여·상속·종합소득세·법인세 실무 쟁점을 법령 근거와 숫자로 정리한 신영범 세무사의 세무 칼럼', 'column/', f'<h1>세무 칼럼</h1><p class="meta">총 {len(cols)}편 · 매일 업데이트</p><div class="col-list">{lst}</div>'))
+    ORDER = ['양도소득세','증여세','상속세','종합소득세','법인세','부가가치세','세액공제·감면','재산세·종합부동산세']
+    cats = sorted({c['category'] for c in cols}, key=lambda k: ORDER.index(k) if k in ORDER else 99)
+    row = lambda c: f'<a href="/column/{c["id"]}.html"><span class="no num">{c["no"]}</span><div><h3><span class="tag">{e(c["category"])}</span>{e(c["title"])}</h3><p>{e(c["summary"])}</p></div></a>'
+    chips = '<div class="filters"><span class="flabel">구분</span>' + f'<a class="chip on" href="#all">전체({len(cols)})</a>' + ''.join(f'<a class="chip" href="#cat-{i}">{e(k)}({sum(1 for c in cols if c["category"]==k)})</a>' for i, k in enumerate(cats)) + '</div>'
+    secs = ''.join(f'<h2 id="cat-{i}" style="font-size:22px;margin-top:36px">{e(k)}({sum(1 for c in cols if c["category"]==k)})</h2><div class="col-list">' + ''.join(row(c) for c in cols if c['category'] == k) + '</div>' for i, k in enumerate(cats))
+    open(f'{OUT}/column/index.html', 'w').write(page(f'세무 칼럼 | {office["name"]}', '양도·증여·상속·종합소득세·법인세 실무 쟁점을 법령 근거와 숫자로 정리한 신영범 세무사의 세무 칼럼', 'column/', f'<h1 id="all">세무 칼럼</h1><p class="meta">총 {len(cols)}편 · 매일 업데이트</p>{chips}{secs}'))
     urls.append(('column/', '0.9'))
 for p in EXTRA: urls.append((p, '0.6'))
 # index: SEO meta + crawlable link list

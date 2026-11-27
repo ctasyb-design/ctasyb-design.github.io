@@ -29,7 +29,7 @@ def page(title, desc, path, body, image=None):
 <meta property="og:type" content="article"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="{e(desc)}"><meta property="og:url" content="{url}">{og_img}
 {fonts}<link rel="stylesheet" href="/assets-style.css"></head><body>
 <header class="top"><div class="wrap"><a class="brand" href="/"><img class="logo" src="/logo.png" alt="{e(office['name'])} 로고"><span><b>{e(office['name'])}</b><small>부산·경남 세무·회계</small></span></a>
-<nav class="main" style="display:flex"><a href="/">홈</a><a href="/#guide">세목별 안내</a><a href="/blog/">세무 블로그</a><a href="https://blog.naver.com/ctasyb" target="_blank" rel="noopener">네이버 블로그</a><a href="/#contact" class="call">상담 신청</a></nav></div></header>
+<nav class="main" style="display:flex"><a href="/">홈</a><a href="/#guide">세목별 안내</a><a href="/blog/">세무 블로그</a><a href="/column/">세무 칼럼</a><a href="https://blog.naver.com/ctasyb" target="_blank" rel="noopener">네이버 블로그</a><a href="/#contact" class="call">상담 신청</a></nav></div></header>
 <main><section class="block"><div class="wrap"><div class="post-wrap">{body}
 <div class="cta"><div class="in"><h3>상담 문의</h3><p>{e(office['hours'])}</p><div class="lines num"><span>전화 <b>{e(office['phone'])}</b></span><span>휴대전화 <b>{e(office.get('mobile',''))}</b></span><span>{e(office['email'])}</span></div><div class="btns"><a class="btn foil" href="/#contact">상담 신청</a></div></div></div><div class="band"><i></i><i></i></div>
 </div></div></section></main>
@@ -62,9 +62,24 @@ for g in guides['items']:
             + (f'<p><a class="btn outline" href="/#guide-{g["id"]}">모의계산 해 보기</a></p>' if g.get('calc') else '') + '</div>')
     open(f'{OUT}/guide/{g["id"]}.html', 'w').write(page(f'{t} | {office["name"]}', g['lead'], f'guide/{g["id"]}.html', body))
     urls.append((f'guide/{g["id"]}.html', '0.7'))
+cols_path = os.path.join(SRC, 'data', 'columns.json')
+cols = sorted(json.load(open(cols_path))['items'], key=lambda c: c['no'], reverse=True) if os.path.exists(cols_path) else []
+if cols:
+    os.makedirs(f'{OUT}/column', exist_ok=True)
+    for c in cols:
+        same = [x for x in cols if x['category'] == c['category'] and x['id'] != c['id']][:4]
+        rel = ''.join(f'<a href="/column/{x["id"]}.html"><span class="no num">{x["no"]}</span><div><h3>{e(x["title"])}</h3><p>{e(x["summary"])}</p></div></a>' for x in same)
+        body = (f'<a class="more" href="/column/">세무 칼럼 목록</a><div class="meta" style="margin-top:22px"><span class="tag">{e(c["category"])}</span><span>칼럼 {c["no"]}</span><span>{c["date"]}</span><span>{e(office["ceo"])}</span></div><h1>{e(c["title"])}</h1>'
+                f'<article class="post-body">{c["body"].replace("<table>","<div class=\"tblwrap\"><table>").replace("</table>","</table></div>")}<div class="kw">{"".join(f"<span>#{e(k)}</span>" for k in c.get("keywords", []))}</div></article>'
+                + (f'<h2 style="font-size:22px;margin-top:40px">같은 분야 칼럼</h2><div class="col-list">{rel}</div>' if rel else ''))
+        open(f'{OUT}/column/{c["id"]}.html', 'w').write(page(f'{c["title"]} | {office["name"]}', c['summary'], f'column/{c["id"]}.html', body))
+        urls.append((f'column/{c["id"]}.html', '0.7'))
+    lst = ''.join(f'<a href="/column/{c["id"]}.html"><span class="no num">{c["no"]}</span><div><h3><span class="tag">{e(c["category"])}</span>{e(c["title"])}</h3><p>{e(c["summary"])}</p></div></a>' for c in cols)
+    open(f'{OUT}/column/index.html', 'w').write(page(f'세무 칼럼 | {office["name"]}', '양도·증여·상속·종합소득세·법인세 실무 쟁점을 법령 근거와 숫자로 정리한 신영범 세무사의 세무 칼럼', 'column/', f'<h1>세무 칼럼</h1><p class="meta">총 {len(cols)}편 · 매일 업데이트</p><div class="col-list">{lst}</div>'))
+    urls.append(('column/', '0.9'))
 for p in EXTRA: urls.append((p, '0.6'))
 # index: SEO meta + crawlable link list
-links = '<nav aria-label="전체 페이지" style="position:absolute;left:-9999px">' + ''.join(f'<a href="/blog/{p["id"]}.html">{e(p["title"])}</a>' for p in posts) + ''.join(f'<a href="/guide/{g["id"]}.html">{e(g["name"])}</a>' for g in guides['items']) + '</nav>'
+links = '<nav aria-label="전체 페이지" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap">' + ''.join(f'<a href="/blog/{p["id"]}.html">{e(p["title"])}</a>' for p in posts) + ''.join(f'<a href="/guide/{g["id"]}.html">{e(g["name"])}</a>' for g in guides['items']) + ''.join(f'<a href="/column/{c["id"]}.html">{e(c["title"])}</a>' for c in cols) + '</nav>'
 seo = f'<link rel="canonical" href="{BASE}/"><meta property="og:type" content="website"><meta property="og:title" content="{e(office["name"])} | 부산·경남 세무사"><meta property="og:description" content="법인세·부가가치세·종합소득세·양도·상속·증여 상담. 최신 세법 개정 소식 매주 업데이트."><meta property="og:url" content="{BASE}/">'
 out_idx = idx.replace('</head>', seo + '\n</head>', 1).replace('<main id="app">', links + '\n<main id="app">', 1)
 open(f'{OUT}/index.html', 'w').write(out_idx)

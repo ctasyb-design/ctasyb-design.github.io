@@ -337,6 +337,14 @@ footer .disc{margin-top:18px;border-top:1px solid rgba(255,255,255,.1);padding-t
 .qr{display:flex;gap:14px;align-items:center;margin-top:16px}
 .qr img{width:104px;height:104px;border:1px solid var(--line);border-radius:8px;background:#fff}
 .mbar{display:none}
+.col-list{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.col-list a{display:grid;grid-template-columns:56px 1fr;gap:14px;padding:16px 20px;border-top:1px solid var(--line);text-decoration:none;color:inherit}
+.col-list a:first-child{border-top:0}
+.col-list a:hover h3{color:var(--blue)}
+.col-list .no{font-weight:700;color:var(--indigo);font-size:15px;padding-top:2px}
+.col-list h3{margin:0 0 4px;font-size:16.5px;line-height:1.5}
+.col-list p{margin:0;color:var(--sub);font-size:14.5px;line-height:1.6}
+.col-list .tag{margin-right:8px}
 @media(max-width:900px){.cardnews{grid-template-columns:repeat(2,minmax(0,1fr))}.recommend{grid-template-columns:1fr}}
 @media(max-width:760px){
   .mbar{display:grid;grid-template-columns:repeat(3,1fr);position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:1px solid var(--line);box-shadow:0 -4px 16px rgba(20,30,70,.08)}
@@ -361,13 +369,14 @@ footer .disc{margin-top:18px;border-top:1px solid rgba(255,255,255,.1);padding-t
       <a href="#laws" data-v="laws">세법 개정 소식</a>
       <a href="#blog" data-v="blog">세무 블로그</a>
       <a href="#cards" data-v="cards">카드뉴스</a>
+      <a href="#columns" data-v="columns">세무 칼럼</a>
       <a href="#" class="kakao-nav" id="navKakao" data-kakao><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#191919" d="M12 3.5C6.75 3.5 2.5 6.86 2.5 11c0 2.62 1.7 4.92 4.28 6.26l-.9 3.3c-.08.3.26.54.52.37l3.94-2.6c.53.07 1.08.11 1.66.11 5.25 0 9.5-3.36 9.5-7.5S17.25 3.5 12 3.5z"/></svg>카카오톡 상담</a>
       <a href="#contact" data-v="contact" class="call">상담 신청</a>
     </nav>
   </div>
 </header>
 
-<nav aria-label="전체 페이지" style="position:absolute;left:-9999px"><a href="/blog/income-tax-interim-prepayment-2026.html">종합소득세 중간예납 2026 총정리 — 11월 30일 고지서대로 내야 할까? 실적 30% 미만이면 추계액 신고, 1천만원 넘으면 분납</a><a href="/blog/crypto-tax-deferral-2029.html">가상자산 과세 2026 총정리 — 코인 세금, 2027년부터 낼까? 2029년 2년 유예 추진·손실 3년 이월공제</a><a href="/blog/fake-33-labor-inspection-2026.html">‘가짜 3.3’ 위장고용 기획감독 2026 총정리 — 우리 가게 3.3% 직원도 대상일까? 11월 16일부터 140여 곳, 점검할 5가지</a><a href="/blog/2026-tax-reform-summary.html">2026 세법개정안 총정리 — 국회 심사 중, 내년부터 무엇이 바뀔까? 납세자가 지금 확인할 7가지</a><a href="/blog/one-house-residence-basis.html">1주택자 종부세·양도세 2026 총정리 — 거주 안 하면 세금 늘까? 실거주 공제 14억, 수정 정부안 비교</a><a href="/blog/corporate-tax-rate-2026-closing.html">법인세율 2026 총정리 — 12월 결산법인, 세금 얼마나 늘까? 1%p 인상 첫 결산 연내 체크리스트</a><a href="/blog/yearend-settlement-2026.html">2026 연말정산 총정리 — 아이 학원비도 공제될까? 예체능 학원비·카드공제 한도 늘어난 4가지</a><a href="/blog/sole-proprietor-h2-2026.html">개인사업자 2기 부가세 2026 총정리 — 간이과세로 바뀌면 신고가 달라질까? 1억400만원 기준·가산세 4%·노란우산 1,800만원</a><a href="/blog/integrated-employment-credit-2026.html">통합고용세액공제 2026 총정리 — 직원 줄면 추징될까? 지방 중소기업 청년 1명 3년 최대 4,900만원</a><a href="/guide/onboard.html">거래처 수임등록 안내</a><a href="/guide/vat.html">부가가치세</a><a href="/guide/income.html">종합소득세</a><a href="/guide/corp.html">법인세</a><a href="/guide/transfer.html">양도소득세</a><a href="/guide/gift.html">증여세</a><a href="/guide/inherit.html">상속세</a></nav>
+<nav aria-label="전체 페이지" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap"><a href="/blog/income-tax-interim-prepayment-2026.html">종합소득세 중간예납 2026 총정리 — 11월 30일 고지서대로 내야 할까? 실적 30% 미만이면 추계액 신고, 1천만원 넘으면 분납</a><a href="/blog/crypto-tax-deferral-2029.html">가상자산 과세 2026 총정리 — 코인 세금, 2027년부터 낼까? 2029년 2년 유예 추진·손실 3년 이월공제</a><a href="/blog/fake-33-labor-inspection-2026.html">‘가짜 3.3’ 위장고용 기획감독 2026 총정리 — 우리 가게 3.3% 직원도 대상일까? 11월 16일부터 140여 곳, 점검할 5가지</a><a href="/blog/2026-tax-reform-summary.html">2026 세법개정안 총정리 — 국회 심사 중, 내년부터 무엇이 바뀔까? 납세자가 지금 확인할 7가지</a><a href="/blog/one-house-residence-basis.html">1주택자 종부세·양도세 2026 총정리 — 거주 안 하면 세금 늘까? 실거주 공제 14억, 수정 정부안 비교</a><a href="/blog/corporate-tax-rate-2026-closing.html">법인세율 2026 총정리 — 12월 결산법인, 세금 얼마나 늘까? 1%p 인상 첫 결산 연내 체크리스트</a><a href="/blog/yearend-settlement-2026.html">2026 연말정산 총정리 — 아이 학원비도 공제될까? 예체능 학원비·카드공제 한도 늘어난 4가지</a><a href="/blog/sole-proprietor-h2-2026.html">개인사업자 2기 부가세 2026 총정리 — 간이과세로 바뀌면 신고가 달라질까? 1억400만원 기준·가산세 4%·노란우산 1,800만원</a><a href="/blog/integrated-employment-credit-2026.html">통합고용세액공제 2026 총정리 — 직원 줄면 추징될까? 지방 중소기업 청년 1명 3년 최대 4,900만원</a><a href="/guide/onboard.html">거래처 수임등록 안내</a><a href="/guide/vat.html">부가가치세</a><a href="/guide/income.html">종합소득세</a><a href="/guide/corp.html">법인세</a><a href="/guide/transfer.html">양도소득세</a><a href="/guide/gift.html">증여세</a><a href="/guide/inherit.html">상속세</a><a href="/column/comprehensive-business-transfer.html">사업 포괄양수도 총정리 — 가게를 통째로 넘기면 부가세를 안 내도 될까? 요건과 주의점</a><a href="/column/executive-retirement-pay.html">임원 퇴직금 한도 총정리 — 대표 퇴직금, 얼마까지 비용으로 인정될까? 정관 규정과 2배수 한도</a><a href="/column/provisional-payment-risk.html">가지급금 총정리 — 대표님이 법인 돈을 쓰면 무엇이 문제일까? 인정이자 4.6%와 정리 방법</a><a href="/column/sincere-filing-confirmation.html">성실신고확인 대상 총정리 — 우리 사업장도 6월에 신고할까? 업종별 기준과 비용 세액공제</a><a href="/column/freelancer-33-refund.html">프리랜서 3.3% 종합소득세 총정리 — 떼인 세금 돌려받을 수 있을까? 5월 신고 환급 구조</a><a href="/column/estimated-expense-rate.html">단순경비율·기준경비율 총정리 — 장부 없이 신고하면 세금이 얼마나 나올까? 추계신고의 함정</a><a href="/column/bookkeeping-obligation.html">간편장부·복식부기 기준 총정리 — 우리 가게는 어떤 장부를 써야 할까? 업종별 수입금액 기준</a><a href="/column/inheritance-installment-payment.html">상속세 연부연납 총정리 — 세금이 너무 많은데 나눠 낼 수 있을까? 분납·연부연납·물납 비교</a><a href="/column/inheritance-deductions.html">상속공제 총정리 — 상속세는 얼마까지 안 낼까? 일괄공제 5억·배우자공제·금융재산공제 한 번에</a><a href="/column/inheritance-tax-filing-steps.html">상속세 신고 절차 총정리 — 가족이 돌아가신 뒤 무엇부터 할까? 6개월 기한과 단계별 준비</a><a href="/column/family-loan-interest.html">가족 간 돈 빌리기 총정리 — 부모님께 빌린 돈도 증여일까? 차용증·적정이자 4.6% 기준</a><a href="/column/fund-source-investigation.html">자금출처조사 총정리 — 집 살 때 부모님 돈 받으면 걸릴까? 80% 소명 기준과 준비 자료</a><a href="/column/gift-property-valuation.html">부동산 증여 평가 총정리 — 공시가격으로 신고하면 될까? 시가·매매사례가·감정가 기준</a><a href="/column/burden-gift.html">부담부증여 총정리 — 전세 낀 아파트를 자녀에게 주면 세금이 줄까? 증여세·양도세 함께 계산</a><a href="/column/transfer-tax-necessary-expenses.html">양도세 필요경비 총정리 — 인테리어 비용도 빼 줄까? 인정되는 비용·안 되는 비용과 증빙</a><a href="/column/long-term-holding-deduction.html">장기보유특별공제 총정리 — 오래 가지고 있으면 양도세가 얼마나 줄까? 최대 30%·80% 계산법</a><a href="/column/marriage-cohabitation-two-house.html">혼인·부모님 합가 2주택 총정리 — 결혼해서 집이 2채가 되면? 10년 안에 파는 집 비과세</a><a href="/column/inherited-house-special-rule.html">상속주택 특례 총정리 — 부모님 집을 물려받아 2주택, 내 집 팔면 세금 낼까? 일반주택 비과세 조건</a><a href="/column/temporary-two-house.html">일시적 2주택 비과세 총정리 — 새집을 먼저 샀는데 세금 나올까? 1년·3년 규칙과 처분기한</a><a href="/column/one-house-exemption-requirements.html">1세대 1주택 비과세 요건 총정리 — 2년만 가지고 있으면 될까? 보유·거주·12억 기준 한 번에 정리</a></nav>
 <main id="app"><div class="empty">불러오는 중…</div></main>
 
 <div class="modal" id="kakaoModal" role="dialog" aria-modal="true" aria-labelledby="kakaoTitle"><div class="box">
@@ -418,6 +427,7 @@ async function load(){
   }
   try{ const r = await fetch("feeds/naverblog.json", {cache:"no-store"}); if(r.ok) S.nfeed = await r.json(); }catch(_){}
   try{ const r = await fetch("feeds/moef.json", {cache:"no-store"}); if(r.ok) S.moef = await r.json(); }catch(_){}
+  try{ const r = await fetch("data/columns.json", {cache:"no-store"}); if(r.ok){ S.cols = await r.json(); S.cols.items.sort((a,b)=>b.no-a.no); } }catch(_){}
   S.laws.items.sort((a,b) => b.date.localeCompare(a.date));
   S.posts.items.sort((a,b) => b.date.localeCompare(a.date));
   $("#hdrName").textContent = S.office.name;
@@ -500,6 +510,11 @@ const RECOMMEND = [
 ];
 function cardItems(){ return S.posts.items.filter(p=>p.card); }
 function cardTile(p){ return `<a href="#post-${esc(p.id)}"><img src="cards/${esc(p.id)}.png" alt="${esc(p.card.l1+" "+p.card.l2+" "+p.card.l3)}" loading="lazy"><span>${esc(p.card.l1)} ${esc(p.card.l3)}</span><small>${fmt(p.date)} · ${esc(p.category)}</small></a>`; }
+function colList(){
+  const q = (S.colQ||"").trim().toLowerCase(), c = S.colCat||"전체";
+  return ((S.cols&&S.cols.items)||[]).filter(x => (c==="전체"||x.category===c) && (!q || [x.title,x.summary,(x.keywords||[]).join(" "),x.category].join(" ").toLowerCase().includes(q)));
+}
+function colRow(x){ return `<a href="#column-${esc(x.id)}"><span class="no num">${x.no}</span><div><h3><span class="tag">${esc(x.category)}</span>${esc(x.title)}</h3><p>${esc(x.summary)}</p></div></a>`; }
 function blogList(){
   const q = (S.blogQ||"").trim().toLowerCase();
   return S.posts.items.filter(p => (S.blogFilter==="전체" || p.category===S.blogFilter) && (!q || [p.title,p.summary,(p.keywords||[]).join(" "),p.category].join(" ").toLowerCase().includes(q)));
@@ -628,6 +643,11 @@ const VIEWS = {
       <div class="cardnews">${cardItems().slice(0,4).map(cardTile).join("")}</div>
     </div></section>`:""}
 
+    ${S.cols&&S.cols.items.length?`<section class="block" style="padding-top:0"><div class="wrap">
+      <div class="sec-head"><div><h2>세무 칼럼</h2><p>실무 쟁점을 법령 근거와 숫자로 정리한 칼럼입니다. 매일 새 칼럼이 추가됩니다.</p></div><a class="more" href="#columns">칼럼 ${S.cols.items.length}편 전체 보기</a></div>
+      <div class="col-list">${S.cols.items.slice(0,5).map(colRow).join("")}</div>
+    </div></section>`:""}
+
     <section class="block tint"><div class="wrap">
       <div class="sec-head"><div><h2>이런 분께 상담을 권합니다</h2><p>아래 상황이라면 신고·계약 전에 먼저 상담하시는 것이 세금을 줄이는 길입니다.</p></div><a class="more" href="#contact">상담 신청</a></div>
       <ol class="recommend">${RECOMMEND.map(t=>`<li><a href="#contact">${esc(t)}</a></li>`).join("")}</ol>
@@ -717,6 +737,33 @@ const VIEWS = {
       <p style="margin-top:14px"><a class="more" href="https://www.mofe.go.kr" target="_blank" rel="noopener">재정경제부 누리집에서 전체 보기</a></p>
     </div></section>`;
   },
+  columns(){
+    const items = (S.cols&&S.cols.items)||[];
+    const cats = ["전체", ...new Set(items.map(x=>x.category))];
+    const list = colList();
+    return `<section class="block"><div class="wrap" style="max-width:900px">
+      <div class="sec-head"><div><h2>세무 칼럼</h2><p>양도·증여·상속·종합소득세·법인세 실무 쟁점을 법령 근거와 숫자로 정리합니다. 매일 새 칼럼이 추가됩니다.</p></div>${S.cols?`<span class="updated num">총 ${items.length}편 · ${fmt(S.cols.updated)} 갱신</span>`:""}</div>
+      <div class="filters">${cats.map(c=>`<button class="chip ${(S.colCat||"전체")===c?"on":""}" data-ccat="${esc(c)}">${esc(c)}</button>`).join("")}</div>
+      <div class="filters"><input class="search" id="colQ" aria-label="칼럼 검색" placeholder="칼럼 검색 (예: 일시적 2주택, 부담부증여, 가지급금)" value="${esc(S.colQ||"")}"></div>
+      <div class="col-list" id="colList">${list.map(colRow).join("") || '<div class="empty">찾는 칼럼이 없습니다.</div>'}</div>
+      ${ctaBox()}</div></section>`;
+  },
+  columnDetail(id){
+    const items = (S.cols&&S.cols.items)||[];
+    const p = items.find(x => x.id === id);
+    if(!p) return `<div class="wrap empty">칼럼을 찾을 수 없습니다. <a href="#columns">세무 칼럼 목록</a></div>`;
+    const others = items.filter(x => x.id !== id && x.category === p.category).slice(0,4);
+    return `<section class="block"><div class="wrap"><div class="post-wrap">
+      <a href="#columns" class="more">세무 칼럼 목록</a>
+      <div class="meta" style="margin-top:22px"><span class="tag">${esc(p.category)}</span><span class="num">칼럼 ${p.no}</span><span class="num">${fmt(p.date)}</span><span>${esc(S.office.ceo)}</span></div>
+      <h1>${esc(p.title)}</h1>
+      <article class="post-body">${p.body.replace(/<table>/g,'<div class="tblwrap"><table>').replace(/<\/table>/g,'</table></div>')}
+        <div class="kw">${(p.keywords||[]).map(k=>`<span>#${esc(k)}</span>`).join("")}</div>
+        ${ctaBox()}
+      </article>
+      ${others.length?`<div class="sec-head" style="margin-top:48px"><div><h2 style="font-size:22px">같은 분야 칼럼</h2></div></div><div class="col-list">${others.map(colRow).join("")}</div>`:""}
+    </div></div></section>`;
+  },
   cards(){
     const list = cardItems();
     return `<section class="block"><div class="wrap">
@@ -794,12 +841,13 @@ function route(){
   let v = h, arg = null;
   if(h.startsWith("post-")){ v = "post"; arg = h.slice(5); }
   if(h.startsWith("guide-")){ v = "guideDetail"; arg = h.slice(6); }
+  if(h.startsWith("column-")){ v = "columnDetail"; arg = h.slice(7); }
   if(v==="press") v = "blog";
   if(!VIEWS[v]) v = "home";
   $("#app").innerHTML = VIEWS[v](arg);
-  document.querySelectorAll("nav.main a").forEach(a => a.classList.toggle("on", a.dataset.v === (v==="post"?"blog":v==="guideDetail"?"guide":v) && !a.classList.contains("call")));
+  document.querySelectorAll("nav.main a").forEach(a => a.classList.toggle("on", a.dataset.v === (v==="post"?"blog":v==="guideDetail"?"guide":v==="columnDetail"?"columns":v) && !a.classList.contains("call")));
   $("#nav").classList.remove("open"); $("#menuBtn").setAttribute("aria-expanded","false");
-  document.title = v==="guideDetail" ? `${gTitle((S.guides.items.find(x=>x.id===arg)||{}).name||"세목별")} | ${S.office.name}` : v==="post" ? `${(S.posts.items.find(x=>x.id===arg)||{}).title||"세무 블로그"} | ${S.office.name}` : `${S.office.name} | 부산·경남 세무사 · 세무 블로그`;
+  document.title = v==="guideDetail" ? `${gTitle((S.guides.items.find(x=>x.id===arg)||{}).name||"세목별")} | ${S.office.name}` : v==="post" ? `${(S.posts.items.find(x=>x.id===arg)||{}).title||"세무 블로그"} | ${S.office.name}` : v==="columnDetail" ? `${(((S.cols&&S.cols.items)||[]).find(x=>x.id===arg)||{}).title||"세무 칼럼"} | ${S.office.name}` : `${S.office.name} | 부산·경남 세무사 · 세무 블로그`;
   window.scrollTo(0,0);
   bind(v, arg);
 }
@@ -826,6 +874,10 @@ function bind(v, arg){
     document.querySelectorAll("[data-cat]").forEach(b => b.onclick = () => { S.lawFilter = b.dataset.cat; document.querySelectorAll("[data-cat]").forEach(x=>x.classList.toggle("on", x===b)); renderLawList(); });
     $("#lawQ").oninput = e => { S.lawQ = e.target.value; renderLawList(); };
     $("#lawSt").onchange = e => { S.lawSt = e.target.value; renderLawList(); };
+  }
+  if(v==="columns"){
+    document.querySelectorAll("[data-ccat]").forEach(b => b.onclick = () => { S.colCat = b.dataset.ccat; $("#app").innerHTML = VIEWS.columns(); bind("columns"); });
+    $("#colQ").oninput = e => { S.colQ = e.target.value; $("#colList").innerHTML = colList().map(colRow).join("") || '<div class="empty">찾는 칼럼이 없습니다.</div>'; };
   }
   if(v==="blog"){
     document.querySelectorAll("[data-bcat]").forEach(b => b.onclick = () => { S.blogFilter = b.dataset.bcat; $("#app").innerHTML = VIEWS.blog(); bind("blog"); });

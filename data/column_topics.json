@@ -1,0 +1,690 @@
+{
+ "updated": "2026-11-27",
+ "note": "매일 3편씩 status=pending 인 주제를 번호 순서대로 작성하고 status를 done, id를 기록합니다.",
+ "items": [
+  {
+   "no": 21,
+   "category": "양도소득세",
+   "topic": "다주택자 양도세 중과 현황과 배제 요건",
+   "status": "pending"
+  },
+  {
+   "no": 22,
+   "category": "증여세",
+   "topic": "자녀 결혼자금 증여 1억 추가공제 활용",
+   "status": "pending"
+  },
+  {
+   "no": 23,
+   "category": "상속세",
+   "topic": "사전증여와 상속세 합산의 득실",
+   "status": "pending"
+  },
+  {
+   "no": 24,
+   "category": "종합소득세",
+   "topic": "종합소득세 신고 대상과 합산 소득",
+   "status": "pending"
+  },
+  {
+   "no": 25,
+   "category": "양도소득세",
+   "topic": "분양권·입주권이 있을 때 1주택 비과세 판단",
+   "status": "pending"
+  },
+  {
+   "no": 26,
+   "category": "법인세",
+   "topic": "개인사업자 법인전환 판단 기준",
+   "status": "pending"
+  },
+  {
+   "no": 27,
+   "category": "증여세",
+   "topic": "손주 세대생략 증여 할증과세",
+   "status": "pending"
+  },
+  {
+   "no": 28,
+   "category": "종합소득세",
+   "topic": "부동산 임대소득 신고(주택·상가)",
+   "status": "pending"
+  },
+  {
+   "no": 29,
+   "category": "부가가치세",
+   "topic": "간이과세자 기준과 전환 시기",
+   "status": "pending"
+  },
+  {
+   "no": 30,
+   "category": "상속세",
+   "topic": "상속재산 분할 협의와 세금",
+   "status": "pending"
+  },
+  {
+   "no": 31,
+   "category": "세액공제·감면",
+   "topic": "창업중소기업 세액감면",
+   "status": "pending"
+  },
+  {
+   "no": 32,
+   "category": "재산세·종합부동산세",
+   "topic": "재산세 과세기준일 6월 1일 활용",
+   "status": "pending"
+  },
+  {
+   "no": 33,
+   "category": "양도소득세",
+   "topic": "재건축·재개발 입주권 양도세 계산",
+   "status": "pending"
+  },
+  {
+   "no": 34,
+   "category": "증여세",
+   "topic": "증여 후 반환·재증여의 세금",
+   "status": "pending"
+  },
+  {
+   "no": 35,
+   "category": "상속세",
+   "topic": "상속 포기·한정승인 판단",
+   "status": "pending"
+  },
+  {
+   "no": 36,
+   "category": "종합소득세",
+   "topic": "주택임대 분리과세 2천만원 이하",
+   "status": "pending"
+  },
+  {
+   "no": 37,
+   "category": "양도소득세",
+   "topic": "농지 양도세 8년 자경 감면",
+   "status": "pending"
+  },
+  {
+   "no": 38,
+   "category": "법인세",
+   "topic": "법인 대표 급여·배당 비율 설계",
+   "status": "pending"
+  },
+  {
+   "no": 39,
+   "category": "증여세",
+   "topic": "저가 양수에 따른 증여의제",
+   "status": "pending"
+  },
+  {
+   "no": 40,
+   "category": "종합소득세",
+   "topic": "금융소득 종합과세 2천만원 기준",
+   "status": "pending"
+  },
+  {
+   "no": 41,
+   "category": "부가가치세",
+   "topic": "면세사업자 사업장현황신고",
+   "status": "pending"
+  },
+  {
+   "no": 42,
+   "category": "상속세",
+   "topic": "가업상속공제 요건과 사후관리",
+   "status": "pending"
+  },
+  {
+   "no": 43,
+   "category": "세액공제·감면",
+   "topic": "중소기업 특별세액감면",
+   "status": "pending"
+  },
+  {
+   "no": 44,
+   "category": "재산세·종합부동산세",
+   "topic": "종부세 1세대 1주택 공제와 세액공제",
+   "status": "pending"
+  },
+  {
+   "no": 45,
+   "category": "양도소득세",
+   "topic": "공익사업 수용 시 양도세 감면",
+   "status": "pending"
+  },
+  {
+   "no": 46,
+   "category": "증여세",
+   "topic": "특수관계 법인과의 거래 증여의제",
+   "status": "pending"
+  },
+  {
+   "no": 47,
+   "category": "상속세",
+   "topic": "영농상속공제",
+   "status": "pending"
+  },
+  {
+   "no": 48,
+   "category": "종합소득세",
+   "topic": "연금소득 분리과세 1,500만원",
+   "status": "pending"
+  },
+  {
+   "no": 49,
+   "category": "양도소득세",
+   "topic": "비사업용 토지 판단과 중과세율",
+   "status": "pending"
+  },
+  {
+   "no": 50,
+   "category": "법인세",
+   "topic": "법인 차량 비용 처리 한도",
+   "status": "pending"
+  },
+  {
+   "no": 51,
+   "category": "증여세",
+   "topic": "차명계좌와 증여추정",
+   "status": "pending"
+  },
+  {
+   "no": 52,
+   "category": "종합소득세",
+   "topic": "기타소득 300만원 분리과세",
+   "status": "pending"
+  },
+  {
+   "no": 53,
+   "category": "부가가치세",
+   "topic": "의제매입세액공제(음식점)",
+   "status": "pending"
+  },
+  {
+   "no": 54,
+   "category": "상속세",
+   "topic": "상속세 세무조사 대비",
+   "status": "pending"
+  },
+  {
+   "no": 55,
+   "category": "세액공제·감면",
+   "topic": "투자세액공제(통합투자세액공제)",
+   "status": "pending"
+  },
+  {
+   "no": 56,
+   "category": "재산세·종합부동산세",
+   "topic": "종부세 합산배제 신고",
+   "status": "pending"
+  },
+  {
+   "no": 57,
+   "category": "양도소득세",
+   "topic": "상가 양도 시 부가세·양도세 함께 보기",
+   "status": "pending"
+  },
+  {
+   "no": 58,
+   "category": "증여세",
+   "topic": "보험금 수령인과 보험료 납부자 다를 때",
+   "status": "pending"
+  },
+  {
+   "no": 59,
+   "category": "상속세",
+   "topic": "상속 부동산 감정평가 활용",
+   "status": "pending"
+  },
+  {
+   "no": 60,
+   "category": "종합소득세",
+   "topic": "사업자 경비 처리 기준과 증빙",
+   "status": "pending"
+  },
+  {
+   "no": 61,
+   "category": "양도소득세",
+   "topic": "양도·취득 시기(잔금일·등기일) 판단",
+   "status": "pending"
+  },
+  {
+   "no": 62,
+   "category": "법인세",
+   "topic": "기업업무추진비 한도 계산",
+   "status": "pending"
+  },
+  {
+   "no": 63,
+   "category": "증여세",
+   "topic": "배우자 증여 6억 공제 활용 전략",
+   "status": "pending"
+  },
+  {
+   "no": 64,
+   "category": "종합소득세",
+   "topic": "업무용 승용차 비용 처리",
+   "status": "pending"
+  },
+  {
+   "no": 65,
+   "category": "부가가치세",
+   "topic": "세금계산서 발급 시기와 가산세",
+   "status": "pending"
+  },
+  {
+   "no": 66,
+   "category": "상속세",
+   "topic": "상속세와 취득세 함께 보기",
+   "status": "pending"
+  },
+  {
+   "no": 67,
+   "category": "세액공제·감면",
+   "topic": "고용 증대와 사회보험료 세액공제",
+   "status": "pending"
+  },
+  {
+   "no": 68,
+   "category": "재산세·종합부동산세",
+   "topic": "부부 공동명의 종부세 특례 선택",
+   "status": "pending"
+  },
+  {
+   "no": 69,
+   "category": "양도소득세",
+   "topic": "양도세 예정신고·확정신고 차이",
+   "status": "pending"
+  },
+  {
+   "no": 70,
+   "category": "증여세",
+   "topic": "10년 합산 과세 계산 실무",
+   "status": "pending"
+  },
+  {
+   "no": 71,
+   "category": "상속세",
+   "topic": "배우자 상속공제 극대화 방법",
+   "status": "pending"
+  },
+  {
+   "no": 72,
+   "category": "종합소득세",
+   "topic": "가족 인건비 경비 처리",
+   "status": "pending"
+  },
+  {
+   "no": 73,
+   "category": "양도소득세",
+   "topic": "양도차손 통산과 합산 신고",
+   "status": "pending"
+  },
+  {
+   "no": 74,
+   "category": "법인세",
+   "topic": "법인 감가상각과 절세",
+   "status": "pending"
+  },
+  {
+   "no": 75,
+   "category": "증여세",
+   "topic": "증여세 신고기한과 가산세",
+   "status": "pending"
+  },
+  {
+   "no": 76,
+   "category": "종합소득세",
+   "topic": "노란우산공제 소득공제",
+   "status": "pending"
+  },
+  {
+   "no": 77,
+   "category": "부가가치세",
+   "topic": "신용카드 매출세액공제",
+   "status": "pending"
+  },
+  {
+   "no": 78,
+   "category": "상속세",
+   "topic": "상속 채무·장례비 공제 증빙",
+   "status": "pending"
+  },
+  {
+   "no": 79,
+   "category": "세액공제·감면",
+   "topic": "최저한세와 공제 순서",
+   "status": "pending"
+  },
+  {
+   "no": 80,
+   "category": "양도소득세",
+   "topic": "부부 공동명의 주택 양도세 절세 효과",
+   "status": "pending"
+  },
+  {
+   "no": 81,
+   "category": "증여세",
+   "topic": "증여세 연부연납",
+   "status": "pending"
+  },
+  {
+   "no": 82,
+   "category": "상속세",
+   "topic": "상속인 간 재산 이전과 증여세",
+   "status": "pending"
+  },
+  {
+   "no": 83,
+   "category": "종합소득세",
+   "topic": "중간예납 추계액 신고",
+   "status": "pending"
+  },
+  {
+   "no": 84,
+   "category": "양도소득세",
+   "topic": "배우자 증여 후 양도 이월과세",
+   "status": "pending"
+  },
+  {
+   "no": 85,
+   "category": "법인세",
+   "topic": "이월결손금 공제 한도",
+   "status": "pending"
+  },
+  {
+   "no": 86,
+   "category": "증여세",
+   "topic": "가업승계 증여세 과세특례",
+   "status": "pending"
+  },
+  {
+   "no": 87,
+   "category": "종합소득세",
+   "topic": "종합소득세 경정청구와 환급",
+   "status": "pending"
+  },
+  {
+   "no": 88,
+   "category": "부가가치세",
+   "topic": "폐업 시 잔존재화 부가세",
+   "status": "pending"
+  },
+  {
+   "no": 89,
+   "category": "상속세",
+   "topic": "해외 재산 상속 신고",
+   "status": "pending"
+  },
+  {
+   "no": 90,
+   "category": "양도소득세",
+   "topic": "저가 양도·고가 양수 부당행위계산",
+   "status": "pending"
+  },
+  {
+   "no": 91,
+   "category": "증여세",
+   "topic": "창업자금 증여세 과세특례",
+   "status": "pending"
+  },
+  {
+   "no": 92,
+   "category": "상속세",
+   "topic": "보험금·퇴직금의 상속재산 여부",
+   "status": "pending"
+  },
+  {
+   "no": 93,
+   "category": "종합소득세",
+   "topic": "성실신고 사후검증 대응",
+   "status": "pending"
+  },
+  {
+   "no": 94,
+   "category": "양도소득세",
+   "topic": "주택 수에서 빠지는 주택(조특법 특례주택)",
+   "status": "pending"
+  },
+  {
+   "no": 95,
+   "category": "법인세",
+   "topic": "특수관계인 부당행위계산 부인",
+   "status": "pending"
+  },
+  {
+   "no": 96,
+   "category": "증여세",
+   "topic": "주식 증여 시 비상장주식 평가",
+   "status": "pending"
+  },
+  {
+   "no": 97,
+   "category": "종합소득세",
+   "topic": "사업용 계좌 신고 의무",
+   "status": "pending"
+  },
+  {
+   "no": 98,
+   "category": "부가가치세",
+   "topic": "부동산 임대 간주임대료 부가세",
+   "status": "pending"
+  },
+  {
+   "no": 99,
+   "category": "상속세",
+   "topic": "유언·유류분 분쟁과 세금",
+   "status": "pending"
+  },
+  {
+   "no": 100,
+   "category": "양도소득세",
+   "topic": "오피스텔 주택 수 판단과 양도세",
+   "status": "pending"
+  },
+  {
+   "no": 101,
+   "category": "증여세",
+   "topic": "현금 증여와 생활비·교육비 비과세 경계",
+   "status": "pending"
+  },
+  {
+   "no": 102,
+   "category": "상속세",
+   "topic": "상속세 납부 재원 마련 방법",
+   "status": "pending"
+  },
+  {
+   "no": 103,
+   "category": "종합소득세",
+   "topic": "현금영수증 의무발행 업종",
+   "status": "pending"
+  },
+  {
+   "no": 104,
+   "category": "양도소득세",
+   "topic": "겸용주택(상가주택) 양도세 계산",
+   "status": "pending"
+  },
+  {
+   "no": 105,
+   "category": "법인세",
+   "topic": "법인 부동산 취득·보유 세금",
+   "status": "pending"
+  },
+  {
+   "no": 106,
+   "category": "증여세",
+   "topic": "부모 카드 사용·생활비 대납과 증여",
+   "status": "pending"
+  },
+  {
+   "no": 107,
+   "category": "종합소득세",
+   "topic": "근로소득과 사업소득 동시 신고",
+   "status": "pending"
+  },
+  {
+   "no": 108,
+   "category": "부가가치세",
+   "topic": "예정고지와 예정신고 선택",
+   "status": "pending"
+  },
+  {
+   "no": 109,
+   "category": "양도소득세",
+   "topic": "1주택자 고가주택 12억 초과분 계산 실무",
+   "status": "pending"
+  },
+  {
+   "no": 110,
+   "category": "증여세",
+   "topic": "전세자금 증여와 자금출처",
+   "status": "pending"
+  },
+  {
+   "no": 111,
+   "category": "종합소득세",
+   "topic": "부부 사업자 공동사업 과세",
+   "status": "pending"
+  },
+  {
+   "no": 112,
+   "category": "양도소득세",
+   "topic": "해외 부동산 양도세 신고",
+   "status": "pending"
+  },
+  {
+   "no": 113,
+   "category": "법인세",
+   "topic": "법인 자기주식 취득과 세무",
+   "status": "pending"
+  },
+  {
+   "no": 114,
+   "category": "증여세",
+   "topic": "신탁을 활용한 증여",
+   "status": "pending"
+  },
+  {
+   "no": 115,
+   "category": "종합소득세",
+   "topic": "결손금·이월결손금 활용",
+   "status": "pending"
+  },
+  {
+   "no": 116,
+   "category": "양도소득세",
+   "topic": "주식 양도세 대주주 기준과 신고",
+   "status": "pending"
+  },
+  {
+   "no": 117,
+   "category": "증여세",
+   "topic": "증여세 대납 시 재증여 문제",
+   "status": "pending"
+  },
+  {
+   "no": 118,
+   "category": "양도소득세",
+   "topic": "비상장주식 양도세 계산",
+   "status": "pending"
+  },
+  {
+   "no": 119,
+   "category": "법인세",
+   "topic": "법인 청산 시 세금",
+   "status": "pending"
+  },
+  {
+   "no": 120,
+   "category": "증여세",
+   "topic": "증여 취소·반환 기한",
+   "status": "pending"
+  },
+  {
+   "no": 121,
+   "category": "양도소득세",
+   "topic": "지분 양도와 증권거래세",
+   "status": "pending"
+  },
+  {
+   "no": 122,
+   "category": "양도소득세",
+   "topic": "양도세 감면 종합한도",
+   "status": "pending"
+  },
+  {
+   "no": 123,
+   "category": "법인세",
+   "topic": "중간예납과 법인지방소득세",
+   "status": "pending"
+  },
+  {
+   "no": 124,
+   "category": "양도소득세",
+   "topic": "임대주택 거주주택 비과세 특례",
+   "status": "pending"
+  },
+  {
+   "no": 125,
+   "category": "양도소득세",
+   "topic": "상생임대주택 특례와 2026년 종료",
+   "status": "pending"
+  },
+  {
+   "no": 126,
+   "category": "법인세",
+   "topic": "연구·인력개발비 세액공제",
+   "status": "pending"
+  },
+  {
+   "no": 127,
+   "category": "양도소득세",
+   "topic": "장기임대주택 등록 말소와 양도세",
+   "status": "pending"
+  },
+  {
+   "no": 128,
+   "category": "양도소득세",
+   "topic": "토지 분할·합병 시 취득시기",
+   "status": "pending"
+  },
+  {
+   "no": 129,
+   "category": "법인세",
+   "topic": "법인 세무조사 대비 체크리스트",
+   "status": "pending"
+  },
+  {
+   "no": 130,
+   "category": "양도소득세",
+   "topic": "증여받은 부동산 양도 시 취득가액",
+   "status": "pending"
+  },
+  {
+   "no": 131,
+   "category": "양도소득세",
+   "topic": "상속받은 부동산 양도 시 취득가액",
+   "status": "pending"
+  },
+  {
+   "no": 132,
+   "category": "법인세",
+   "topic": "결산 조정 항목 점검",
+   "status": "pending"
+  },
+  {
+   "no": 133,
+   "category": "양도소득세",
+   "topic": "양도세 필요경비 개산공제(환산취득가액)",
+   "status": "pending"
+  },
+  {
+   "no": 134,
+   "category": "양도소득세",
+   "topic": "환산취득가액 가산세와 감정평가",
+   "status": "pending"
+  }
+ ]
+}

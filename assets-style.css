@@ -308,3 +308,30 @@ footer .brandf{display:flex;align-items:center;gap:10px;margin-bottom:8px}
 footer .brandf img{width:30px;height:30px}
 footer .disc{margin-top:18px;border-top:1px solid rgba(255,255,255,.1);padding-top:14px;font-size:12.5px;color:#8189ad}
 .empty{padding:30px;text-align:center;color:var(--sub)}
+
+/* 2026-11-27 추가: 상담 권유, 카드뉴스, 블로그 검색, 오시는 길, 하단 고정 상담 바 */
+.exp{display:inline-block;margin:0 0 16px;padding:6px 14px;border-radius:999px;background:rgba(255,255,255,.14);color:#fff;font-size:14px;font-weight:600}
+.recommend{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;counter-reset:rc}
+.recommend li{counter-increment:rc}
+.recommend a{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px;text-decoration:none;color:inherit;font-size:16px;line-height:1.55}
+.recommend a:hover{border-color:var(--indigo)}
+.recommend a::before{content:counter(rc);flex:0 0 30px;height:30px;border-radius:50%;background:var(--indigo);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+.cardnews{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.cardnews a{display:block;text-decoration:none;color:inherit}
+.cardnews img{display:block;width:100%;aspect-ratio:1/1;border-radius:12px;border:1px solid var(--line);object-fit:cover}
+.cardnews a:hover img{border-color:var(--indigo)}
+.cardnews span{display:block;margin-top:8px;font-size:14px;line-height:1.5;color:var(--ink);font-weight:600}
+.cardnews small{display:block;color:var(--sub);font-size:13px;margin-top:2px}
+.mapbtns{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.warn{margin-top:14px;background:#fff6e5;border:1px solid #f0d9a8;border-radius:10px;padding:12px 14px;font-size:14px;line-height:1.6}
+.qr{display:flex;gap:14px;align-items:center;margin-top:16px}
+.qr img{width:104px;height:104px;border:1px solid var(--line);border-radius:8px;background:#fff}
+.mbar{display:none}
+@media(max-width:900px){.cardnews{grid-template-columns:repeat(2,minmax(0,1fr))}.recommend{grid-template-columns:1fr}}
+@media(max-width:760px){
+  .mbar{display:grid;grid-template-columns:repeat(3,1fr);position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:1px solid var(--line);box-shadow:0 -4px 16px rgba(20,30,70,.08)}
+  .mbar a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:9px 0 calc(9px + env(safe-area-inset-bottom));font-size:13px;font-weight:700;text-decoration:none;color:var(--indigo)}
+  .mbar a.k{background:#fee500;color:#191919}
+  .mbar a.t{background:var(--indigo);color:#fff}
+  body{padding-bottom:64px}
+}
